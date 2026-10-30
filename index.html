@@ -76,6 +76,7 @@ img{display:block;max-width:100%;height:auto}
 @media(min-width:920px){.nav-desk{display:flex}}
 .nav-desk a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);transition:color .25s}
 .nav-desk a:hover{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+  .header.on .nav-desk a { color:#1A1A1A !important; }
 .actions{display:flex;align-items:center;gap:4px;flex-shrink:0}
 .icon-btn{width:46px;height:46px;min-width:44px;min-height:44px;border-radius:50%;display:grid;place-items:center;color:var(--text);position:relative;transition:background .25s,color .25s;cursor:pointer}
 .icon-btn:hover{background:rgba(138,40,70,.08);color:var(--marsala)}
@@ -335,6 +336,9 @@ img{display:block;max-width:100%;height:auto}
   .header-inner { flex-wrap: wrap !important; justify-content: center !important; gap: 10px !important; }
   .logo { font-size: 22px !important; text-align: center; width: 100%; }
   .hero-row { flex-direction: column !important; align-items: center !important; }
+  .logo { font-size: 16px !important; line-height: 1.2 !important; max-width: 60% !important; }
+  .header-inner { flex-wrap: nowrap !important; justify-content: space-between !important; align-items: center !important; padding: 10px 15px !important; }
+  .actions { flex-shrink: 0 !important; gap: 5px !important; }
 }
 
 @media(max-width:600px){
