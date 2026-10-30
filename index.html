@@ -31,6 +31,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:auto}
 body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+p{line-height:1.6 !important}
 body.is-locked{overflow:hidden}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
@@ -76,7 +77,10 @@ img{display:block;max-width:100%;height:auto}
 @media(min-width:920px){.nav-desk{display:flex}}
 .nav-desk a{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.6);transition:color .25s}
 .nav-desk a:hover{color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8)}
-  .header.on .nav-desk a { color:#1A1A1A !important; }
+.nav-desk a:focus-visible{outline:2px solid #8A2846 !important;outline-offset:4px}
+.header.on .nav-desk a,
+.header.on .nav-desk a:hover,
+.header.on .nav-desk a:focus{color:#1A1A1A !important;text-shadow:none !important}
 .actions{display:flex;align-items:center;gap:4px;flex-shrink:0}
 .icon-btn{width:46px;height:46px;min-width:44px;min-height:44px;border-radius:50%;display:grid;place-items:center;color:var(--text);position:relative;transition:background .25s,color .25s;cursor:pointer}
 .icon-btn:hover{background:rgba(138,40,70,.08);color:var(--marsala)}
@@ -89,7 +93,7 @@ img{display:block;max-width:100%;height:auto}
 .burger.on span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
 @media(min-width:920px){.burger{display:none}}
 
-.overlay{position:fixed;inset:0;z-index:850;background:rgba(26,26,26,.4);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s}
+.overlay{position:fixed;inset:0;z-index:850;background:rgba(26,26,26,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .35s}
 .overlay.open{opacity:1;pointer-events:auto}
 .drawer-left{position:fixed;top:0;left:0;bottom:0;width:min(100%,360px);background:var(--bg);z-index:860;padding:calc(var(--hh) + 20px) 28px 32px;transform:translateX(-105%);transition:transform .5s var(--ease);box-shadow:var(--shadow2)}
 .drawer-left.open{transform:none}
@@ -97,13 +101,14 @@ img{display:block;max-width:100%;height:auto}
 .drawer-left a:hover{color:var(--marsala);padding-left:8px}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;min-height:44px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.03em;transition:transform .3s var(--ease),box-shadow .3s,background .25s,color .25s;border:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;min-height:44px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.03em;border:none;cursor:pointer}
+.btn, .add-btn, .chip { transition: background-color 0.3s ease, transform 0.2s ease !important; }
 .btn-primary{background:var(--marsala);color:#fff;box-shadow:0 12px 36px rgba(138,40,70,.28)}
 .btn-primary:hover{background:var(--marsala2);transform:translateY(-2px)}
 .btn-gold{background:linear-gradient(135deg,var(--gold),#C49A2A);color:#1A1A1A;box-shadow:0 12px 32px rgba(212,175,55,.35)}
 .btn-gold:hover{transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:var(--marsala);border:1.5px solid rgba(138,40,70,.22);min-height:44px}
-.btn-ghost:hover{background:rgba(138,40,70,.06)}
+.btn-ghost:hover{background-color:#6B1E36 !important;color:#fff !important}
 .btn-full{width:100%}
 .btn-sm{padding:12px 20px;font-size:13px;min-height:44px}
 
@@ -115,12 +120,12 @@ img{display:block;max-width:100%;height:auto}
 .eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
 .hero h1{font-family:var(--font-d);font-size:clamp(3.2rem,10.5vw,8rem);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:18px;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.7)}
 .hero h1 em{font-style:normal;color:var(--gold)}
-.hero-sub{font-size:clamp(15px,2vw,17px);color:#fff;max-width:440px;line-height:1.7;margin-bottom:28px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hero-sub{font-size:clamp(15px,2vw,17px);color:#fff;max-width:440px;line-height:1.6 !important;margin-bottom:28px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .hero-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;color:#fff;font-size:13px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
 .hero-meta strong{color:#fff;font-weight:600}
-.hero .btn-ghost{background:rgba(255,255,255,.25);color:#fff;border:1.5px solid rgba(255,255,255,.5);backdrop-filter:blur(10px);min-height:44px}
-.hero .btn-ghost:hover{background:rgba(255,255,255,.35);color:#fff;border-color:rgba(255,255,255,.7)}
+.hero .btn-ghost{background:rgba(255,255,255,.25);color:#fff;border:1.5px solid rgba(255,255,255,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);min-height:44px}
+.hero .btn-ghost:hover{background-color:#6B1E36 !important;color:#fff !important;border-color:#6B1E36 !important}
 
 /* Marquee */
 .marquee{padding:22px 0;overflow:hidden;border-block:1px solid var(--line);background:linear-gradient(90deg,rgba(200,214,229,.3),rgba(240,248,255,.8),rgba(230,230,250,.3))}
@@ -157,7 +162,7 @@ img{display:block;max-width:100%;height:auto}
 .bento-card .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.5));pointer-events:none}
 .bento-body{position:absolute;left:0;right:0;bottom:0;padding:20px;z-index:2;color:#fff;transform:translateZ(20px)}
 .bento-body h3{font-family:var(--font-d);font-size:clamp(1.25rem,2vw,1.85rem);font-weight:700;margin-bottom:10px;text-shadow:0 2px 4px rgba(0,0,0,.8)}
-.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);transition:background .3s,color .3s,transform .3s;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);transition:background .3s,color .3s,transform .3s;text-shadow:0 1px 3px rgba(0,0,0,.5)}
 .bento-card:hover .pill{background:var(--gold);color:var(--text);border-color:transparent;transform:translateX(3px)}
 
 /* Benefits */
@@ -239,7 +244,7 @@ img{display:block;max-width:100%;height:auto}
 .rev b{font-size:13px;color:var(--text)}
 .rev span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
 #openReviewBtn{background-color:#8A2846 !important;color:#FFFFFF !important;border:none !important;opacity:1 !important;min-height:44px;box-shadow:0 8px 24px rgba(138,40,70,.25)}
-#openReviewBtn:hover{background-color:var(--marsala2) !important;color:#FFFFFF !important;transform:translateY(-2px)}
+#openReviewBtn:hover{background-color:#6B1E36 !important;color:#FFFFFF !important;transform:translateY(-2px)}
 
 /* Footer */
 .footer{padding:80px 0 48px;border-top:1px solid var(--line);background:linear-gradient(180deg,transparent,rgba(200,214,229,.25))}
@@ -257,7 +262,7 @@ img{display:block;max-width:100%;height:auto}
 .fbot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 
 /* Cart drawer */
-.cart-ov{position:fixed;inset:0;z-index:950;background:rgba(26,26,26,.42);backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity .35s}
+.cart-ov{position:fixed;inset:0;z-index:950;background:rgba(26,26,26,.42);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);opacity:0;pointer-events:none;transition:opacity .35s}
 .cart-ov.open{opacity:1;pointer-events:auto}
 .cart{position:fixed;top:0;right:0;bottom:0;width:min(100%,420px);background:var(--bg);z-index:960;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .5s var(--ease);box-shadow:-16px 0 50px rgba(96,39,73,.12)}
 .cart.open{transform:none}
@@ -273,13 +278,13 @@ img{display:block;max-width:100%;height:auto}
 .qty{display:flex;align-items:center;gap:7px}
 .qbtn{width:36px;height:36px;min-width:36px;min-height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;display:grid;place-items:center;font-size:16px;cursor:pointer}
 .qbtn:hover{background:var(--marsala);color:#fff;border-color:var(--marsala)}
-.cart-f{padding:20px 24px 28px;border-top:1px solid var(--line);background:rgba(255,255,255,.7);backdrop-filter:blur(10px)}
+.cart-f{padding:20px 24px 28px;border-top:1px solid var(--line);background:rgba(255,255,255,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .csum{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
 .csum span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 .csum strong{font-family:var(--font-d);font-size:30px;color:var(--marsala);font-weight:500}
 
 /* Checkout Modal */
-.checkout-modal-ov{position:fixed;inset:0;z-index:970;background:rgba(26,26,26,.5);backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .35s}
+.checkout-modal-ov{position:fixed;inset:0;z-index:970;background:rgba(26,26,26,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .35s}
 .checkout-modal-ov.open{opacity:1;pointer-events:auto}
 .checkout-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);background:var(--bg);border-radius:30px;padding:36px 32px;max-width:440px;width:calc(100% - 32px);z-index:980;box-shadow:var(--shadow2);opacity:0;pointer-events:none;transition:opacity .35s,transform .35s var(--ease)}
 .checkout-modal.open{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
@@ -333,11 +338,9 @@ img{display:block;max-width:100%;height:auto}
 
 @media(max-width:768px){
   .bento, .products, .bento-grid, .catalog-grid, .features { grid-template-columns: 1fr !important; }
-  .header-inner { flex-wrap: wrap !important; justify-content: center !important; gap: 10px !important; }
-  .logo { font-size: 22px !important; text-align: center; width: 100%; }
-  .hero-row { flex-direction: column !important; align-items: center !important; }
-  .logo { font-size: 16px !important; line-height: 1.2 !important; max-width: 60% !important; }
   .header-inner { flex-wrap: nowrap !important; justify-content: space-between !important; align-items: center !important; padding: 10px 15px !important; }
+  .logo { font-size: 16px !important; line-height: 1.2 !important; max-width: 60% !important; text-align: left !important; }
+  .hero-row { flex-direction: column !important; align-items: center !important; }
   .actions { flex-shrink: 0 !important; gap: 5px !important; }
 }
 
@@ -506,12 +509,12 @@ img{display:block;max-width:100%;height:auto}
       </div>
     </div>
     <div class="filters reveal" id="filters">
-      <button type="button" class="fchip active" data-cat="all">Все</button>
-      <button type="button" class="fchip" data-cat="latex">Воздушные шары</button>
-      <button type="button" class="fchip" data-cat="event">Фотозоны и праздники</button>
+      <button type="button" class="fchip active" data-cat="all" aria-label="Все">Все</button>
+      <button type="button" class="fchip" data-cat="latex" aria-label="Воздушные шары">Воздушные шары</button>
+      <button type="button" class="fchip" data-cat="event" aria-label="Фотозоны и праздники">Фотозоны и праздники</button>
     </div>
     <div class="products" id="products"></div>
-    <div class="load-more-wrapper"><button type="button" class="load-more hidden" id="loadMore">Показать ещё</button></div>
+    <div class="load-more-wrapper"><button type="button" class="load-more hidden" id="loadMore" aria-label="Показать ещё товары">Показать ещё</button></div>
   </div>
 </section>
 
@@ -523,19 +526,19 @@ img{display:block;max-width:100%;height:auto}
       <p>Ориентировочная стоимость. Точную смету подтвердим в переписке — без оплаты на сайте.</p>
       <label class="glabel">01 / Повод</label>
       <div class="chips" id="occChips">
-        <button type="button" class="chip" data-val="3500" data-name="День рождения">День рождения</button>
-        <button type="button" class="chip" data-val="7000" data-name="Свадьба">Свадьба</button>
-        <button type="button" class="chip" data-val="4500" data-name="Выписка">Выписка</button>
-        <button type="button" class="chip" data-val="5500" data-name="Выпускной">Выпускной</button>
+        <button type="button" class="chip" data-val="3500" data-name="День рождения" aria-label="День рождения">День рождения</button>
+        <button type="button" class="chip" data-val="7000" data-name="Свадьба" aria-label="Свадьба">Свадьба</button>
+        <button type="button" class="chip" data-val="4500" data-name="Выписка" aria-label="Выписка">Выписка</button>
+        <button type="button" class="chip" data-val="5500" data-name="Выпускной" aria-label="Выпускной">Выпускной</button>
       </div>
       <label class="glabel">02 / Оформление</label>
       <div class="chips" id="decChips">
-        <button type="button" class="chip" data-val="2500" data-name="Шары">Шары</button>
-        <button type="button" class="chip" data-val="8000" data-name="Фотозона">Фотозона</button>
-        <button type="button" class="chip" data-val="15000" data-name="Зал / президиум">Зал / президиум</button>
+        <button type="button" class="chip" data-val="2500" data-name="Шары" aria-label="Шары">Шары</button>
+        <button type="button" class="chip" data-val="8000" data-name="Фотозона" aria-label="Фотозона">Фотозона</button>
+        <button type="button" class="chip" data-val="15000" data-name="Зал / президиум" aria-label="Зал / президиум">Зал / президиум</button>
       </div>
       <div class="total"><span>Ориентир</span><strong id="calcSum">0 ₽</strong></div>
-      <button type="button" class="btn btn-primary btn-full magnetic" id="addCalc">Добавить расчёт в корзину</button>
+      <button type="button" class="btn btn-primary btn-full magnetic" id="addCalc" aria-label="Добавить расчёт в корзину">Добавить расчёт в корзину</button>
     </div>
 
     <div class="panel reveal" id="order">
@@ -558,7 +561,7 @@ img{display:block;max-width:100%;height:auto}
         </div>
         <div class="field"><label for="fDate">Дата праздника</label><input id="fDate" name="date" type="date"></div>
         <div class="field"><label for="fMsg">Пожелания</label><textarea id="fMsg" name="message" placeholder="Цвета, бюджет, адрес доставки…"></textarea></div>
-        <button type="submit" class="btn btn-gold btn-full magnetic" id="leadSubmit">Отправить заказ</button>
+        <button type="submit" class="btn btn-gold btn-full magnetic" id="leadSubmit" aria-label="Отправить заказ">Отправить заказ</button>
         <p class="form-note">На сайте нет онлайн-оплаты. Мы свяжемся с вами, уточним детали и согласуем удобный способ оплаты.</p>
       </form>
     </div>
@@ -572,7 +575,7 @@ img{display:block;max-width:100%;height:auto}
         <p class="sec-eye reveal">Отзывы · 5.0</p>
         <h2 class="sec-title reveal">Нас выбирают<br><em>снова и снова</em></h2>
       </div>
-      <button class="btn btn-primary btn-sm reveal" id="openReviewBtn">Оставить отзыв</button>
+      <button class="btn btn-primary btn-sm reveal" id="openReviewBtn" aria-label="Оставить отзыв">Оставить отзыв</button>
     </div>
     <div class="reviews" id="reviewsList">
       <article class="rev reveal"><div class="stars">★★★★★</div><p>«Заказывали фотозону на 1 день рождения. Всё подробно объяснили, доставили вовремя до квартиры. Отнеслись с душой — только положительные впечатления!»</p><b>Гость с Яндекс Карт</b><span>Ачинск</span></article>
@@ -631,7 +634,7 @@ img{display:block;max-width:100%;height:auto}
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-f">
     <div class="csum"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
-    <button type="button" class="btn btn-gold btn-full magnetic" id="checkoutBtn">Связаться по заказу</button>
+    <button type="button" class="btn btn-gold btn-full magnetic" id="checkoutBtn" aria-label="Связаться по заказу">Связаться по заказу</button>
     <p class="form-note" style="text-align:center;margin-top:10px">Откроем выбор мессенджера. Оплата — после согласования.</p>
   </div>
 </aside>
@@ -669,7 +672,7 @@ img{display:block;max-width:100%;height:auto}
   <form id="callbackForm" style="display:grid;gap:16px">
     <div class="field"><label for="cbName">Имя</label><input id="cbName" type="text" placeholder="Как к вам обращаться" required></div>
     <div class="field"><label for="cbPhone">Телефон</label><input id="cbPhone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
-    <button type="submit" class="btn btn-primary btn-full">Отправить</button>
+    <button type="submit" class="btn btn-primary btn-full" aria-label="Отправить заявку на звонок">Отправить</button>
   </form>
 </div>
 
@@ -691,7 +694,7 @@ img{display:block;max-width:100%;height:auto}
       </select>
     </div>
     <div class="field"><label for="rvText">Отзыв</label><textarea id="rvText" placeholder="Расскажите о вашем опыте" required style="min-height:80px"></textarea></div>
-    <button type="submit" class="btn btn-primary btn-full">Отправить отзыв</button>
+    <button type="submit" class="btn btn-primary btn-full" aria-label="Отправить отзыв">Отправить отзыв</button>
   </form>
 </div>
 
