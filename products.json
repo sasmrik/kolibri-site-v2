@@ -5,7 +5,7 @@
     "price": 990,
     "cat": "latex",
     "badge": "Хит",
-    "img": "shary.jpg"
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70"
   },
   {
     "id": "p2",
@@ -13,29 +13,29 @@
     "price": 45,
     "cat": "latex",
     "badge": "",
-    "img": "shary.jpg"
+    "img": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70"
   },
   {
     "id": "p3",
     "name": "Фольгированное сердце",
     "price": 350,
-    "cat": "foil",
+    "cat": "latex",
     "badge": "New",
-    "img": "cifra.jpg"
+    "img": "https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     "id": "p4",
     "name": "Фольгированная цифра",
     "price": 1200,
-    "cat": "foil",
+    "cat": "latex",
     "badge": "Хит",
-    "img": "cifra.jpg"
+    "img": "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     "id": "p5",
     "name": "Фотозона «Нежность»",
     "price": 12000,
-    "cat": "photo",
+    "cat": "event",
     "badge": "Premium",
     "img": "wings.jpg"
   },
@@ -43,15 +43,15 @@
     "id": "p6",
     "name": "Напольная композиция",
     "price": 3200,
-    "cat": "photo",
+    "cat": "event",
     "badge": "",
-    "img": "vypusk.jpg"
+    "img": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70"
   },
   {
     "id": "p7",
     "name": "Выписка / сет для малыша",
     "price": 4500,
-    "cat": "baby",
+    "cat": "event",
     "badge": "Топ",
     "img": "vypusk.jpg"
   },
@@ -59,31 +59,31 @@
     "id": "p8",
     "name": "Оформление годика",
     "price": 7800,
-    "cat": "baby",
+    "cat": "event",
     "badge": "",
-    "img": "vypusk.jpg"
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70"
   },
   {
     "id": "p9",
     "name": "Коробка-сюрприз",
     "price": 4500,
-    "cat": "box",
+    "cat": "event",
     "badge": "Топ",
-    "img": "cifra.jpg"
+    "img": "https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
     "id": "p10",
     "name": "Каркасная цифра с подсветкой",
     "price": 3500,
-    "cat": "box",
+    "cat": "event",
     "badge": "Аренда",
-    "img": "cifra.jpg"
+    "img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70"
   },
   {
     "id": "p11",
     "name": "Свадебная арка",
     "price": 18000,
-    "cat": "wedding",
+    "cat": "event",
     "badge": "Premium",
     "img": "hero.jpg"
   },
@@ -91,8 +91,56 @@
     "id": "p12",
     "name": "Президиум молодожёнов",
     "price": 15000,
-    "cat": "wedding",
+    "cat": "event",
     "badge": "",
-    "img": "hero.jpg"
+    "img": "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p13",
+    "name": "Композиция «Лебеди»",
+    "price": 1500,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p14",
+    "name": "Шар 14\" с надписью",
+    "price": 65,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p15",
+    "name": "Фольгированная звезда",
+    "price": 450,
+    "cat": "latex",
+    "badge": "New",
+    "img": "https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": "p16",
+    "name": "Воздушный шар с конфетти",
+    "price": 280,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p17",
+    "name": "Гелиевая композиция \"Цветы\"",
+    "price": 1800,
+    "cat": "latex",
+    "badge": "Хит",
+    "img": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p18",
+    "name": "Шар-сюрприз 18\"",
+    "price": 380,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600"
   }
 ]
