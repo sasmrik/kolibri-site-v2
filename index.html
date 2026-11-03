@@ -419,6 +419,13 @@ img{display:block;max-width:100%;height:auto}
 /* Compact Stats */
 .stats-block, .bgrid { padding: 15px 10px !important; gap: 10px !important; }
 .stat-num { font-size: 1.8rem !important; }
+
+/* Ускоряем бегущую строку на телефонах */
+@media (max-width: 768px) {
+    .marquee-track {
+        animation-duration: 12s !important; /* Было 36с, стало 12с */
+    }
+}
 </style>
 </head>
 <body>
