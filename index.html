@@ -86,7 +86,7 @@ img{display:block;max-width:100%;height:auto}
 /* Логотип и текст в шапке - БЕЛЫЙ */
 .logo{font-family:var(--font-b);font-size:clamp(18px,2.5vw,26px);font-weight:800;letter-spacing:-.01em;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;display:flex;flex-direction:column;line-height:1.15}
 .logo-main{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;text-shadow:none !important}
-.logo-sub{font-size:11px;font-weight:500;color:#D0D0D0 !important;-webkit-text-fill-color:#D0D0D0 !important;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:.9;text-shadow:none !important}
+.logo-sub{font-size:10px;font-weight:500;color:#D0D0D0 !important;-webkit-text-fill-color:#D0D0D0 !important;letter-spacing:.02em;white-space:normal;overflow:hidden;text-overflow:ellipsis;opacity:.9;text-shadow:none !important;line-height: 1.3; margin-top: 2px;}
 .logo em{font-style:normal;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;opacity:1;font-weight:600;text-shadow:none !important}
 
 .nav-desk{display:none;gap:28px}
@@ -133,7 +133,11 @@ img{display:block;max-width:100%;height:auto}
 .eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
 .hero h1{font-family:var(--font-d);font-size:clamp(3.2rem,10.5vw,8rem);font-weight:800;line-height:.92;letter-spacing:-.03em;margin-bottom:18px;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.7)}
 .hero h1 em{font-style:normal;color:var(--gold)}
-.hero-sub{font-size:clamp(15px,2vw,17px);color:#fff;max-width:440px;line-height:1.6 !important;margin-bottom:28px;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+
+/* Hero Sub Split */
+.hero-sub-small { font-size: 13px; color: #fff; opacity: 0.9; margin-bottom: 12px; text-shadow: 0 1px 4px rgba(0,0,0,.5); font-weight: 400; line-height: 1.5 !important; }
+.hero-sub { font-size: clamp(15px,2vw,17px); color:#fff; max-width:440px; line-height:1.6 !important; margin-bottom:28px; text-shadow:0 2px 10px rgba(0,0,0,.6); font-weight: 500; }
+
 .hero-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;color:#fff;font-size:13px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
 .hero-meta strong{color:#fff;font-weight:600}
@@ -150,9 +154,10 @@ img{display:block;max-width:100%;height:auto}
 
 .section{padding:120px 0}
 .section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:48px}
-.sec-eye{font-size:18px !important;font-weight:800 !important;letter-spacing:.22em !important;text-transform:uppercase;color:#6B1E36 !important;margin-bottom:14px}
+.sec-eye{font-size:14px !important;font-weight:800 !important;letter-spacing:.22em !important;text-transform:uppercase;color:#8A2846 !important;margin-bottom:14px}
 .sec-title{font-family:var(--font-b);font-size:clamp(1.8rem,3.5vw,2.5rem) !important;font-weight:800;letter-spacing:-.02em;line-height:1.2 !important;color:#8A2846 !important}
 .sec-title em{font-style:normal;color:var(--gold);-webkit-text-fill-color:var(--gold)}
+.sec-desc { font-size: 14px; color: var(--soft); margin-top: 10px; max-width: 400px; line-height: 1.5 !important; }
 
 /* Bento — 3D tilt */
 .bento{display:grid;grid-template-columns:1fr;grid-auto-rows:minmax(180px,auto);gap:14px}
@@ -303,7 +308,7 @@ img{display:block;max-width:100%;height:auto}
 .checkout-modal h3{font-family:var(--font-d);font-size:26px;font-weight:500;color:var(--marsala);margin-bottom:8px;text-align:center}
 .checkout-modal p{color:var(--soft);font-size:14px;text-align:center;margin-bottom:28px}
 .messenger-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.messenger-btn{display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 16px;border-radius:20px;border:1.5px solid var(--line);background:var(--white);transition:.25s}
+.messenger-btn{display:flex;flex-direction:column;align-items:center;gap:8px;padding:20px 16px;border-radius:20px;border:1.5px solid var(--line);background:var(--white);transition:.25s;text-decoration:none;}
 .messenger-btn:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .messenger-btn svg{width:32px;height:32px}
 .messenger-btn span{font-size:13px;font-weight:600;color:var(--text)}
@@ -319,7 +324,7 @@ img{display:block;max-width:100%;height:auto}
 .messenger-btn.max{border-color:rgba(138,40,70,.3)}
 .messenger-btn.max:hover{border-color:var(--marsala);background:rgba(138,40,70,.05)}
 .messenger-btn.max svg{color:var(--marsala)}
-.modal-close{position:absolute;top:14px;right:14px;width:44px;height:44px;min-width:44px;min-height:44px;border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:.25s;cursor:pointer}
+.modal-close{position:absolute;top:14px;right:14px;width:44px;height:44px;min-width:44px;min-height:44px;border-radius:50%;display:grid;place-items:center;color:var(--muted);transition:.25s;cursor:pointer;background:transparent;border:none;}
 .modal-close:hover{background:rgba(26,26,26,.06);color:var(--text)}
 
 .toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);z-index:990;padding:12px 22px;border-radius:999px;background:var(--text);color:#fff;font-size:13px;font-weight:500;box-shadow:var(--shadow2);transition:transform .45s var(--ease);white-space:nowrap;max-width:calc(100% - 32px);overflow:hidden;text-overflow:ellipsis}
@@ -351,9 +356,9 @@ img{display:block;max-width:100%;height:auto}
 /* Stats block */
 .stats-block{padding:16px 0;border-block:1px solid var(--line);background:rgba(255,255,255,.6)}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.stat-item{padding:12px 8px;text-align:center;border-right:1px solid var(--line);will-change:transform}
+.stat-item{padding:12px 8px;text-align:center;border-right:1px solid var(--line);will-change:transform; display:flex; flex-direction:column; justify-content:center;}
 .stat-item:last-child{border-right:none}
-.stat-item strong{display:block;font-family:var(--font-d);font-size:clamp(1.2rem,2.5vw,1.6rem);color:var(--marsala);font-weight:700;line-height:1.1;margin-bottom:4px}
+.stat-item strong{display:block;font-family:var(--font-b);font-size:clamp(1rem,2vw,1.3rem);color:var(--marsala);font-weight:800;line-height:1.2;margin-bottom:4px; letter-spacing: -0.02em;}
 .stat-item span{font-size:11px;color:var(--soft);line-height:1.3}
 
 /* Catalog note */
@@ -368,18 +373,22 @@ img{display:block;max-width:100%;height:auto}
 /* ========================================= */
 @media(max-width:768px){
   .header-inner { flex-wrap: nowrap !important; justify-content: space-between !important; align-items: center !important; padding: 10px 15px !important; }
-  .logo { font-size: 14px !important; line-height: 1.2 !important; max-width: 55% !important; text-align: left !important; }
-  .logo-sub { display: none; }
+  .logo { font-size: 15px !important; line-height: 1.1 !important; max-width: 60% !important; text-align: left !important; }
+  .logo-sub { display: block !important; font-size: 9.5px !important; white-space: normal !important; line-height: 1.3 !important; margin-top: 2px; }
+  
   .hero-row { flex-direction: column !important; align-items: center !important; }
   .actions { flex-shrink: 0 !important; gap: 5px !important; }
+  
   .stats-grid { grid-template-columns: 1fr 1fr !important; }
+  .stat-item strong { font-size: 1.05rem !important; line-height: 1.15 !important; }
+  .stat-item span { font-size: 10px !important; }
   
   /* FIX: Modal max-height and positioning on mobile */
   .checkout-modal {
       padding:24px 20px;
       max-height:85vh;
       overflow-y:auto;
-      background: #F0F8FF !important; /* Плотный фон, чтобы не было прозрачности */
+      background: #F0F8FF !important;
       position: fixed !important;
       top: 50% !important;
       left: 50% !important;
@@ -416,16 +425,12 @@ img{display:block;max-width:100%;height:auto}
   *{max-width:100%;box-sizing:border-box}
 
   /* УБИРАЕМ ЛАГИ НА ТЕЛЕФОНЕ */
-  .blob { display: none !important; } /* Убираем тяжелые размытые пятна */
+  .blob { display: none !important; }
   .header { backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; }
-  .tilt-card { transform: none !important; perspective: none !important; } /* Отключаем 3D эффекты */
+  .tilt-card { transform: none !important; perspective: none !important; }
   
-  .marquee-track { animation-duration: 12s !important; } /* Ускоряем бегущую строку */
+  .marquee-track { animation-duration: 12s !important; }
 }
-
-/* Compact Stats */
-.stats-block, .bgrid { padding: 15px 10px !important; gap: 10px !important; }
-.stat-num { font-size: 1.8rem !important; }
 </style>
 </head>
 <body>
@@ -442,7 +447,10 @@ img{display:block;max-width:100%;height:auto}
 <div class="page">
 <header class="header" id="header">
   <div class="container header-inner">
-    <a href="#hero" class="logo"><span class="logo-main">🕊️ КОЛИБРИ</span><span class="logo-sub">Студия декора и праздника «Колибри» Ачинск</span></a>
+    <a href="#hero" class="logo">
+      <span class="logo-main">🕊️ КОЛИБРИ</span>
+      <span class="logo-sub">Студия декора и праздника «Колибри» Ачинск</span>
+    </a>
     <nav class="nav-desk" aria-label="Меню">
       <a href="#categories">Категории</a>
       <a href="#catalog">Каталог</a>
@@ -478,7 +486,11 @@ img{display:block;max-width:100%;height:auto}
   <div class="container hero-content">
     <p class="eyebrow">Студия декора · Ачинск</p>
     <h1>АТМОСФЕРА<br><em>ПРАЗДНИКА</em></h1>
-    <p class="hero-sub">Создаём красивое оформление для ваших особенных событий. Воздушные шары и композиции, стильные фотозоны, свадебное оформление и праздничный декор в Ачинске. Доставка по Ачинску и району.</p>
+    
+    <!-- Измененный текст -->
+    <p class="hero-sub-small">Создаём красивое оформление для ваших особенных событий.</p>
+    <p class="hero-sub">Воздушные шары и композиции, стильные фотозоны, свадебное оформление и праздничный декор в Ачинске.<br><br>Доставка воздушных шаров по Ачинску и Ачинскому району.</p>
+    
     <div class="hero-row">
       <a href="#catalog" class="btn btn-primary magnetic">Смотреть каталог</a>
       <a href="#order" class="btn btn-ghost magnetic">Оставить заявку</a>
@@ -486,7 +498,7 @@ img{display:block;max-width:100%;height:auto}
     <div class="hero-meta">
       <div><strong>5.0</strong> на Яндекс Картах</div>
       <div><strong>1.2K+</strong> работ в портфолио</div>
-      <div>до <strong>22:00</strong></div>
+      <!-- Время убрано -->
     </div>
   </div>
 </section>
@@ -496,7 +508,8 @@ img{display:block;max-width:100%;height:auto}
     <div class="stats-grid">
       <div class="stat-item"><strong>5+</strong><span>лет опыта в декоре</span></div>
       <div class="stat-item"><strong>3000+</strong><span>выполненных заказов</span></div>
-      <div class="stat-item"><strong>Крупные</strong><span>проекты для компаний</span></div>
+      <!-- Измененный текст -->
+      <div class="stat-item"><strong>Крупные проекты</strong><span>для компаний и организаций</span></div>
       <div class="stat-item"><strong>⭐ 5.0</strong><span>рейтинг на Яндекс Картах</span></div>
     </div>
   </div>
@@ -521,8 +534,10 @@ img{display:block;max-width:100%;height:auto}
   <div class="container">
     <div class="section-head">
       <div>
-        <p class="sec-eye reveal">Категории как в нашей VK</p>
+        <!-- Измененный текст из скрина 5 -->
+        <p class="sec-eye reveal">ШАРЫ И ДЕКОР</p>
         <h2 class="sec-title reveal">Всё для<br><em>вашего праздника</em></h2>
+        <p class="sec-desc reveal">Воздушные шары, композиции, фотозоны и оформление мероприятий</p>
       </div>
       <a href="#catalog" class="btn btn-ghost btn-sm reveal">Весь каталог</a>
     </div>
@@ -671,7 +686,7 @@ img{display:block;max-width:100%;height:auto}
         <p>Студия декора в Ачинске. Создаём атмосферу праздника с помощью воздушных шаров, авторских композиций, фотозон и декоративного оформления.</p>
         <div class="ms">
           <a href="https://wa.me/79676179721" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="https://t.me/79676179721" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://t.me/+79676179721" target="_blank" rel="noopener">Telegram</a>
           <a href="https://vk.ru/kolibri_achinsk" target="_blank" rel="noopener">VK группа</a>
           <a href="https://vk.ru/kolibri_wedding_ach" target="_blank" rel="noopener">VK Свадьбы</a>
         </div>
@@ -698,7 +713,7 @@ img{display:block;max-width:100%;height:auto}
 <div class="fab" aria-label="Быстрая связь">
   <div class="fab-menu" id="fabMenu">
     <a class="wa" href="https://wa.me/79676179721?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%9A%D0%BE%D0%BB%D0%B8%D0%B1%D1%80%D0%B8." target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-.1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a7.4 7.4 0 01-2.2-1.4 8.2 8.2 0 01-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.4c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.5a1.1 1.1 0 00-.8.4 2.6 2.6 0 00-.8 2c0 1.2.9 2.4 1 2.5.2.3 2.1 3.2 5.1 4.4.7.3 1.3.5 1.7.6a4 4 0 001.9.1c.6-.1 1.8-.7 2-1.4s.2-1.3.1-1.4-.2-.2-.5-.3zM12.1 21.2h0a9.2 9.2 0 01-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3a9.2 9.2 0 01-1.4-4.9 9.3 9.3 0 0115.8-6.5 9.2 9.2 0 012.7 6.5 9.3 9.3 0 01-9.3 9.2zm7.9-17a11.1 11.1 0 00-17.9 13.2L1 23l6.1-1.6a11.1 11.1 0 0016.8-9.4 11 11 0 00-3.3-7.9z"/></svg></a>
-    <a class="tg" href="https://t.me/79676179721" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+    <a class="tg" href="https://t.me/+79676179721" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
     <a class="vk" href="https://vk.ru/kolibri_achinsk" target="_blank" rel="noopener" aria-label="VKontakte"><svg viewBox="0 0 24 24"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.44c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.332-3.202C4.624 10.857 4 8.164 4 7.723c0-.237.102-.458.593-.458h1.744c.44 0 .61.203.78.678.863 2.49 2.3 4.675 2.895 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.372 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.403 2.151-3.572 2.151-3.572.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.35 4.031-2.35 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.471 2.05.17.49-.085.744-.576.744z"/></svg></a>
     <a class="max" href="https://vk.ru/id789856377" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></a>
   </div>
@@ -719,9 +734,9 @@ img{display:block;max-width:100%;height:auto}
 <div class="checkout-modal-ov" id="checkoutModalOv"></div>
 <div class="checkout-modal" id="checkoutModal" aria-hidden="true">
   <button class="modal-close" id="closeCheckoutModal" aria-label="Закрыть">✕</button>
-  <h3>Куда отправить заказ?</h3>
-  <p>Выберите удобный мессенджер для связи</p>
-  <div class="messenger-grid">
+  <h3 id="checkoutModalTitle">Куда отправить заказ?</h3>
+  <p id="checkoutModalDesc">Выберите удобный мессенджер для связи</p>
+  <div class="messenger-grid" id="messengerGrid">
     <a class="messenger-btn whatsapp" id="sendWa" href="#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-.1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a7.4 7.4 0 01-2.2-1.4 8.2 8.2 0 01-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.4c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.5a1.1 1.1 0 00-.8.4 2.6 2.6 0 00-.8 2c0 1.2.9 2.4 1 2.5.2.3 2.1 3.2 5.1 4.4.7.3 1.3.5 1.7.6a4 4 0 001.9.1c.6-.1 1.8-.7 2-1.4s.2-1.3.1-1.4-.2-.2-.5-.3zM12.1 21.2h0a9.2 9.2 0 01-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3a9.2 9.2 0 01-1.4-4.9 9.3 9.3 0 0115.8-6.5 9.2 9.2 0 012.7 6.5 9.3 9.3 0 01-9.3 9.2zm7.9-17a11.1 11.1 0 00-17.9 13.2L1 23l6.1-1.6a11.1 11.1 0 0016.8-9.4 11 11 0 00-3.3-7.9z"/></svg>
       <span>WhatsApp</span>
@@ -791,7 +806,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var showAll = false;
   var PRODUCTS = [];
 
-       var FALLBACK_PRODUCTS = [
+  var FALLBACK_PRODUCTS = [
     { id:'p1', name:'Связка гелиевых шаров', price:990, cat:'latex', badge:'Хит', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
     { id:'p2', name:'Шар 12" латекс (шт.)', price:45, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
     { id:'p3', name:'Фольгированное сердце', price:350, cat:'latex', badge:'New', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
@@ -830,7 +845,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function scrollTo(el) {
     if (!el) return;
     var offset = 72;
-    // На мобилках используем нативный скролл, он надежнее
     if (window.matchMedia('(max-width: 900px)').matches) {
         var elementPosition = el.getBoundingClientRect().top;
         var offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -866,10 +880,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function openNav() { closeCart(); closeCheckoutModal(); closeCallbackModal(); closeReviewModal(); burger.classList.add('on'); navDrawer.classList.add('open'); navOv.classList.add('open'); lock(true); }
   function closeCart() { cartEl.classList.remove('open'); cartOv.classList.remove('open'); lock(navDrawer.classList.contains('open') || checkoutModal.classList.contains('open') || callbackModal.classList.contains('open') || reviewModal.classList.contains('open')); }
   function openCart() { closeNav(); closeCheckoutModal(); closeCallbackModal(); closeReviewModal(); cartEl.classList.add('open'); cartOv.classList.add('open'); lock(true); }
-  function openCheckoutModal() { closeNav(); closeCart(); closeCallbackModal(); closeReviewModal(); checkoutModalOv.classList.add('open'); checkoutModal.classList.add('open'); lock(true); }
+  
+  function openCheckoutModal() { 
+    closeNav(); closeCart(); closeCallbackModal(); closeReviewModal(); 
+    checkoutModalOv.classList.add('open'); checkoutModal.classList.add('open'); lock(true); 
+  }
   function closeCheckoutModal() { checkoutModalOv.classList.remove('open'); checkoutModal.classList.remove('open'); lock(navDrawer.classList.contains('open') || cartEl.classList.contains('open') || callbackModal.classList.contains('open') || reviewModal.classList.contains('open')); }
+  
   function openCallbackModal() { closeNav(); closeCart(); closeCheckoutModal(); closeReviewModal(); callbackModalOv.classList.add('open'); callbackModal.classList.add('open'); lock(true); }
   function closeCallbackModal() { callbackModalOv.classList.remove('open'); callbackModal.classList.remove('open'); lock(navDrawer.classList.contains('open') || cartEl.classList.contains('open') || checkoutModal.classList.contains('open') || reviewModal.classList.contains('open')); }
+  
   function openReviewModal() { closeNav(); closeCart(); closeCheckoutModal(); closeCallbackModal(); reviewModalOv.classList.add('open'); reviewModal.classList.add('open'); lock(true); }
   function closeReviewModal() { reviewModalOv.classList.remove('open'); reviewModal.classList.remove('open'); lock(navDrawer.classList.contains('open') || cartEl.classList.contains('open') || checkoutModal.classList.contains('open') || callbackModal.classList.contains('open')); }
 
@@ -997,13 +1017,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('checkoutBtn').addEventListener('click', function () {
     if (!cart.length) { tip('Корзина пуста'); return; }
+    
+    // Восстанавливаем кнопки для корзины
+    document.getElementById('sendWa').style.display = 'flex';
+    document.getElementById('sendMax').style.display = 'flex';
+    document.getElementById('checkoutModalTitle').textContent = 'Куда отправить заказ?';
+    document.getElementById('checkoutModalDesc').textContent = 'Выберите удобный мессенджер для связи';
+
     var total = cart.reduce(function (s, i) { return s + i.price * i.qty; }, 0);
     var text = 'Здравствуйте! Хочу связаться по заказу с сайта Колибри:\n\n';
     cart.forEach(function (i) { text += '• ' + i.name + ' × ' + i.qty + ' — ' + money(i.price * i.qty) + '\n'; });
     text += '\nИтого (ориентир): ' + money(total) + '\nПрошу связаться для уточнения деталей.';
     
     document.getElementById('sendWa').href = 'https://wa.me/79676179721?text=' + encodeURIComponent(text);
-    document.getElementById('sendTg').href = 'https://t.me/79676179721?text=' + encodeURIComponent(text);
+    document.getElementById('sendTg').href = 'https://t.me/+79676179721?text=' + encodeURIComponent(text);
     document.getElementById('sendVk').href = 'https://vk.ru/id789856377';
     document.getElementById('sendMax').href = 'https://vk.ru/id789856377';
     
@@ -1062,8 +1089,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     text += '\nПрошу связаться со мной.';
     
+    // Восстанавливаем кнопки
+    document.getElementById('sendWa').style.display = 'flex';
+    document.getElementById('sendMax').style.display = 'flex';
+    document.getElementById('checkoutModalTitle').textContent = 'Куда отправить заказ?';
+    document.getElementById('checkoutModalDesc').textContent = 'Выберите удобный мессенджер для связи';
+
     document.getElementById('sendWa').href = 'https://wa.me/79676179721?text=' + encodeURIComponent(text);
-    document.getElementById('sendTg').href = 'https://t.me/79676179721?text=' + encodeURIComponent(text);
+    document.getElementById('sendTg').href = 'https://t.me/+79676179721?text=' + encodeURIComponent(text);
     document.getElementById('sendVk').href = 'https://vk.ru/id789856377';
     document.getElementById('sendMax').href = 'https://vk.ru/id789856377';
     
@@ -1076,9 +1109,18 @@ document.addEventListener('DOMContentLoaded', function () {
     var phone = document.getElementById('cbPhone').value.trim();
     if (!name || !phone) { tip('Укажите имя и телефон'); return; }
     var text = 'Здравствуйте! Прошу перезвонить.\n\nИмя: ' + name + '\nТелефон: ' + phone;
-    window.open('https://wa.me/79676179721?text=' + encodeURIComponent(text), '_blank');
+    
+    // Скрываем WA и MAX, оставляем только TG и VK
+    document.getElementById('sendWa').style.display = 'none';
+    document.getElementById('sendMax').style.display = 'none';
+    document.getElementById('checkoutModalTitle').textContent = 'Куда отправить заявку?';
+    document.getElementById('checkoutModalDesc').textContent = 'Выберите удобный мессенджер (Telegram или VK)';
+
+    document.getElementById('sendTg').href = 'https://t.me/+79676179721?text=' + encodeURIComponent(text);
+    document.getElementById('sendVk').href = 'https://vk.ru/id789856377';
+    
     closeCallbackModal();
-    tip('Заявка отправлена в WhatsApp');
+    openCheckoutModal(); // Открываем окно с выбором
   });
 
   document.getElementById('reviewForm').addEventListener('submit', function (e) {
@@ -1130,10 +1172,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!t) { e.preventDefault(); return; }
       e.preventDefault();
 
-      // Закрываем меню
       closeNav();
       
-      // Ждем 100 миллисекунд, чтобы страница разблокировалась и пересчитала высоту, и только потом скроллим
       setTimeout(function() {
         scrollTo(t);
       }, 100);
@@ -1201,7 +1241,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function initMotion() {
     if (hasST) gsap.registerPlugin(ScrollTrigger);
 
-    // На мобилках отключаем Lenis для максимальной производительности
     if (LenisCtor && !reduced && !isMobile) {
       try {
         lenis = new LenisCtor({ duration: 1.05, smoothWheel: true, syncTouch: false });
@@ -1216,12 +1255,11 @@ document.addEventListener('DOMContentLoaded', function () {
       } catch (err) { lenis = null; }
     }
 
-    // Упрощенные анимации появления на мобилках для скорости
     if (hasGsap && hasST && !reduced) {
       document.documentElement.classList.add('js');
       gsap.utils.toArray('.reveal').forEach(function (el) {
         gsap.fromTo(el, { opacity: 0, y: 20 }, {
-          opacity: 1, y: 0, duration: isMobile ? 0.4 : 0.85, ease: 'power2.out', // Быстрее на телефоне
+          opacity: 1, y: 0, duration: isMobile ? 0.4 : 0.85, ease: 'power2.out',
           onStart: function () { el.classList.add('in'); },
           scrollTrigger: { trigger: el, start: 'top 95%', toggleActions: 'play none none none' }
         });
@@ -1276,7 +1314,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('load', function () {
     var loader = document.getElementById('loader');
-    setTimeout(function () { loader.classList.add('hide'); }, reduced ? 100 : 200); // Быстрая загрузка
+    setTimeout(function () { loader.classList.add('hide'); }, reduced ? 100 : 200);
     setTimeout(function() {
       if (hasST) ScrollTrigger.refresh();
     }, 600);
