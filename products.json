@@ -142,5 +142,101 @@
     "cat": "latex",
     "badge": "",
     "img": "https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": "p19",
+    "name": "Хром-шары (набор)",
+    "price": 550,
+    "cat": "latex",
+    "badge": "Новинка",
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p20",
+    "name": "Аэромозаика",
+    "price": 2500,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p21",
+    "name": "Шар с фотографией",
+    "price": 450,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": "p22",
+    "name": "Букет из шаров",
+    "price": 1800,
+    "cat": "latex",
+    "badge": "Топ",
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p23",
+    "name": "Светящиеся шары",
+    "price": 600,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p24",
+    "name": "Оформление потолка",
+    "price": 3500,
+    "cat": "latex",
+    "badge": "",
+    "img": "https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600"
+  },
+  {
+    "id": "p25",
+    "name": "Свадебный декор зала",
+    "price": 25000,
+    "cat": "event",
+    "badge": "Premium",
+    "img": "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p26",
+    "name": "Оформление выездной регистрации",
+    "price": 18000,
+    "cat": "event",
+    "badge": "",
+    "img": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p27",
+    "name": "Фотозона «Цветочный рай»",
+    "price": 9500,
+    "cat": "event",
+    "badge": "Новинка",
+    "img": "wings.jpg"
+  },
+  {
+    "id": "p28",
+    "name": "Гирлянда из шаров",
+    "price": 2800,
+    "cat": "event",
+    "badge": "",
+    "img": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70"
+  },
+  {
+    "id": "p29",
+    "name": "Композиция на выписку",
+    "price": 5500,
+    "cat": "event",
+    "badge": "Хит",
+    "img": "vypusk.jpg"
+  },
+  {
+    "id": "p30",
+    "name": "Оформление корпоратива",
+    "price": 20000,
+    "cat": "event",
+    "badge": "",
+    "img": "hero.jpg"
   }
 ]
