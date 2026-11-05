@@ -3,20 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Колибри — Студия декора и праздника | Ачинск</title>
-<meta name="description" content="Студия «Колибри» в Ачинске: гелиевые шары, фотозоны, свадьбы, выписки, выпускные. Дуем шары и создаём воздушные истории. ул. Красноярская, 30.">
+<title>Организация праздника в Ачинске — Студия декора «Колибри»</title>
+<meta name="description" content="Студия «Колибри» в Ачинске: гелиевые шары, фотозоны, свадьбы, выписки, выпускные. Организация праздника под ключ. Доставка шаров по Ачинску. ул. Красноярская, 30.">
+<meta name="keywords" content="организация праздника в Ачинске, гелиевые шары Ачинск, фотозоны Ачинск, оформление праздника Ачинск, шары с доставкой Ачинск, студия декора Колибри, заказать шары Ачинск">
 <meta name="theme-color" content="#F0F8FF">
+<link rel="canonical" href="https://kolibri-achinsk.ru/">
+
+<!-- Open Graph для красивых ссылок в мессенджерах -->
+<meta property="og:title" content="Студия декора «Колибри» | Организация праздников в Ачинске">
+<meta property="og:description" content="Воздушные шары, фотозоны, свадебный декор и оформление мероприятий в Ачинске. Создаём атмосферу вашего праздника!">
+<meta property="og:image" content="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:url" content="https://kolibri-achinsk.ru/">
+<meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-
-<!-- ПРЕДЗАГРУЗКА ГЛАВНОГО ФОТО ДЛЯ МГНОВЕННОЙ ЗАГРУЗКИ -->
 <link rel="preload" href="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1920&q=80" as="image">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+
+<!-- МИКРОРАЗМЕТКА ДЛЯ ПОИСКОВИКОВ (Локальный бизнес) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Студия декора и праздника Колибри",
+  "image": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80",
+  "@id": "https://kolibri-achinsk.ru/",
+  "url": "https://kolibri-achinsk.ru/",
+  "telephone": "+79676179721",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Красноярская, 30, офис 8",
+    "addressLocality": "Ачинск",
+    "addressRegion": "Красноярский край",
+    "postalCode": "662150",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 56.2694,
+    "longitude": 90.4996
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "09:00",
+    "closes": "22:00"
+  },
+  "priceRange": "₽₽"
+}
+</script>
+
 <style>
 :root{
   --bg:#F0F8FF;--bg2:#E6E6FA;--white:#fff;
@@ -36,7 +80,7 @@
 html{scroll-behavior:auto}
 body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased; touch-action: manipulation;}
 p{line-height:1.6 !important}
-body.is-locked{overflow:hidden;position:fixed;width:100%;height:100%}
+body.is-locked{overflow:hidden;}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
 button{border:none;background:none;cursor:pointer;min-height:44px; touch-action: manipulation;}
@@ -53,7 +97,7 @@ img{display:block;max-width:100%;height:auto}
 .loader-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--marsala),var(--gold));animation:load 0.8s var(--ease) forwards}
 @keyframes load{to{width:100%}}
 
-/* Cursor — только desktop */
+/* Cursor */
 .cursor-dot,.cursor-ring{display:none}
 @media(pointer:fine){
   body.has-cursor{cursor:none}
@@ -71,33 +115,17 @@ img{display:block;max-width:100%;height:auto}
 .blob.b{width:400px;height:400px;background:var(--cyan);bottom:15%;left:-120px}
 .page{position:relative;z-index:1}
 
-/* Header - Темно-прозрачный */
-.header{
-  position:fixed;top:0;left:0;right:0;z-index:900;height:var(--hh);
-  background:rgba(15, 10, 20, 0.6) !important;
-  backdrop-filter:blur(10px) !important;-webkit-backdrop-filter:blur(10px) !important;
-  border-bottom:1px solid rgba(255,255,255,0.1) !important;
-  transition:background .35s,backdrop-filter .35s,border-color .35s,box-shadow .35s;
-  transform:translateZ(0);-webkit-transform:translateZ(0);
-}
-.header.on{
-  background:rgba(15, 10, 20, 0.85) !important;
-  backdrop-filter:blur(12px) saturate(1.15);-webkit-backdrop-filter:blur(12px) saturate(1.15);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
-}
+/* Header */
+.header{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--hh);background:rgba(15, 10, 20, 0.6) !important;backdrop-filter:blur(10px) !important;-webkit-backdrop-filter:blur(10px) !important;border-bottom:1px solid rgba(255,255,255,0.1) !important;transition:background .35s,backdrop-filter .35s,border-color .35s,box-shadow .35s;transform:translateZ(0);-webkit-transform:translateZ(0);}
+.header.on{background:rgba(15, 10, 20, 0.85) !important;backdrop-filter:blur(12px) saturate(1.15);-webkit-backdrop-filter:blur(12px) saturate(1.15);box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;}
 .header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
-
-/* Логотип и текст в шапке - БЕЛЫЙ */
 .logo{font-family:var(--font-b);font-size:clamp(18px,2.5vw,26px);font-weight:800;letter-spacing:-.01em;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;display:flex;flex-direction:column;line-height:1.15}
 .logo-main{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;text-shadow:none !important}
 .logo-sub{font-size:10px;font-weight:500;color:#D0D0D0 !important;-webkit-text-fill-color:#D0D0D0 !important;letter-spacing:.02em;white-space:normal;overflow:hidden;text-overflow:ellipsis;opacity:.9;text-shadow:none !important;line-height: 1.3; margin-top: 2px;}
-.logo em{font-style:normal;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;opacity:1;font-weight:600;text-shadow:none !important}
-
 .nav-desk{display:none;gap:28px}
 @media(min-width:920px){.nav-desk{display:flex}}
 .nav-desk a{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;text-shadow:none !important;transition:color .25s}
 .nav-desk a:hover{color:#D4AF37 !important;-webkit-text-fill-color:#D4AF37 !important}
-.nav-desk a:focus-visible{outline:2px solid #D4AF37 !important;outline-offset:4px}
 .actions{display:flex;align-items:center;gap:4px;flex-shrink:0}
 .icon-btn{width:46px;height:46px;min-width:44px;min-height:44px;border-radius:50%;display:grid;place-items:center;color:#FFFFFF !important;position:relative;transition:background .25s,color .25s;cursor:pointer;text-shadow:none}
 .icon-btn:hover{background:rgba(255,255,255,.1);color:#D4AF37 !important}
@@ -110,10 +138,11 @@ img{display:block;max-width:100%;height:auto}
 .burger.on span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
 @media(min-width:920px){.burger{display:none}}
 
+/* ИСПРАВЛЕНО: Надежное скрытие бокового меню */
 .overlay{position:fixed;inset:0;z-index:850;background:rgba(26,26,26,.4);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .35s}
 .overlay.open{opacity:1;pointer-events:auto}
-.drawer-left{position:fixed;top:0;left:0;bottom:0;width:min(100%,360px);background:var(--bg);z-index:860;padding:calc(var(--hh) + 20px) 28px 32px;transform:translateX(-105%);transition:transform .4s var(--ease);box-shadow:var(--shadow2); overflow-y: auto;}
-.drawer-left.open{transform:none}
+.drawer-left{position:fixed;top:0;left:0;bottom:0;width:min(100%,360px);background:var(--bg);z-index:860;padding:calc(var(--hh) + 20px) 28px 32px;transform:translateX(-105%);transition:transform .4s var(--ease);box-shadow:var(--shadow2); overflow-y: auto; visibility: hidden;}
+.drawer-left.open{transform:none; visibility: visible;}
 .drawer-left a{display:block;font-family:var(--font-d);font-size:28px;padding:12px 0;border-bottom:1px solid var(--line);transition:color .25s,padding-left .25s}
 .drawer-left a:hover{color:var(--marsala);padding-left:8px}
 
@@ -150,11 +179,6 @@ img{display:block;max-width:100%;height:auto}
 .marquee-track span{font-family:var(--font-d);font-size:clamp(1.4rem,3vw,2.3rem);font-style:italic;padding:0 22px;color:var(--marsala);white-space:nowrap}
 .marquee-track .d{color:var(--gold);font-style:normal;padding:0 6px}
 @keyframes mq{to{transform:translateX(-50%)}}
-
-/* УСКОРЕНИЕ БЕГУЩЕЙ СТРОКИ НА МОБИЛЬНЫХ */
-@media(max-width: 768px) {
-  .marquee-track { animation-duration: 12s !important; }
-}
 
 .section{padding:120px 0}
 .section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:48px}
@@ -202,24 +226,28 @@ img{display:block;max-width:100%;height:auto}
 .fchip{padding:12px 20px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--line);color:var(--soft);background:rgba(255,255,255,.85);transition:.25s;cursor:pointer}
 .fchip:hover,.fchip.active{background:linear-gradient(135deg,var(--marsala),var(--plum));color:#fff;border-color:transparent}
 
-/* СДЕЛАНО БОЛЬШЕ И КРУПНЕЕ */
-.products{display:grid;grid-template-columns:1fr;gap:32px}
-@media(min-width:768px){.products{grid-template-columns:repeat(2, 1fr);gap:48px}}
+/* СЕТКА 2 КОЛОНКИ */
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:40px}
+@media(min-width:768px){.products{grid-template-columns:repeat(3, 1fr);gap:24px}}
+@media(min-width:1024px){.products{grid-template-columns:repeat(4, 1fr);gap:24px}}
 
-.pcard{background:var(--white);border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.04);display:flex;flex-direction:column;transition:box-shadow .35s, transform .35s;transform-style:preserve-3d;perspective:1000px}
-.pcard:hover{box-shadow:var(--shadow2); transform: translateY(-5px)}
-.pmedia{position:relative;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(145deg,var(--lilac),#fff 55%,var(--bg2))}
-.pmedia img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.pmedia::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.2));pointer-events:none}
-.pcard:hover .pmedia img{transform:scale(1.05)}
-.pbadge{position:absolute;top:16px;left:16px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.95);font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--marsala);z-index:3}
+.pcard{background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 4px 12px rgba(0,0,0,.04);display:flex;flex-direction:column;}
+.pmedia{position:relative;aspect-ratio:1/1;overflow:hidden;background:linear-gradient(145deg,var(--lilac),#fff 55%,var(--bg2))}
+.pmedia img{width:100%;height:100%;object-fit:cover;}
+.pbadge{position:absolute;top:8px;left:8px;padding:4px 8px;border-radius:999px;background:#fff;font-size:9px;font-weight:800;color:var(--marsala);}
 
-.pinfo{padding:32px 24px;display:flex;flex-direction:column;gap:24px;flex:1;transform:translateZ(10px); text-align: center;}
-.pinfo h3{font-size:22px;font-weight:600;line-height:1.4; font-family: var(--font-d); color: var(--marsala);}
+.pinfo{padding:12px 8px;display:flex;flex-direction:column;gap:8px;flex:1;text-align:center;}
+.pinfo h3{font-size:11px;font-weight:700;line-height:1.3;text-transform:uppercase;color:var(--marsala);min-height:2.6em;display:flex;align-items:center;justify-content:center;}
 
-.pbot{display:flex;align-items:center;justify-content:center;margin-top:auto}
-.btn-order {display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 16px 24px; background: transparent; border: 2px solid var(--marsala); color: var(--marsala); border-radius: 50px; font-weight: 600; font-size: 16px; cursor: pointer; transition: 0.3s;}
-.btn-order:hover { background: var(--marsala); color: #fff; }
+.price-text{font-family:var(--font-b);font-size:13px;color:var(--soft);font-weight:700;text-align:center;margin-bottom:4px;}
+.price{font-family:var(--font-b);font-size:15px;color:var(--text);font-weight:800;text-align:center;margin-bottom:4px;}
+
+.pbot{display:flex;flex-direction:column;gap:6px;margin-top:auto;width:100%;}
+.btn-order, .btn-more { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 10px 4px; border-radius: 50px; font-weight: 700; font-size: 10px; text-transform: uppercase; cursor: pointer; transition: 0.3s; letter-spacing: 0.5px;}
+.btn-more { background: transparent; border: 1px solid var(--marsala); color: var(--marsala); }
+.btn-more:hover { background: var(--marsala); color: #fff; }
+.btn-order { background: var(--marsala); border: 1px solid var(--marsala); color: #fff; }
+.btn-order:hover { background: var(--marsala2); border-color: var(--marsala2); }
 
 /* Пагинация */
 .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
@@ -373,8 +401,6 @@ img{display:block;max-width:100%;height:auto}
   .modal-close{top:10px;right:10px}
   
   .bento{grid-template-columns:1fr;gap:14px}
-  .products{grid-template-columns:1fr;gap:20px}
-  .pmedia{aspect-ratio:1/1;max-height:350px}
   
   .panel { padding: 24px 16px; }
   
@@ -573,7 +599,7 @@ img{display:block;max-width:100%;height:auto}
     <div class="panel reveal">
       <p class="sec-eye" style="text-align:center;">Онлайн-заявка</p>
       <h2>Свяжитесь<br><em>с нами</em></h2>
-      <p>Оставьте заявку — ответим в WhatsApp и поможем собрать идеальный декор.</p>
+      <p>Оставьте заявку — ответим в течение 15 минут и поможем собрать идеальный декор.</p>
       
       <form id="leadForm" novalidate>
         <div class="form-row">
@@ -714,7 +740,6 @@ img{display:block;max-width:100%;height:auto}
   <div class="cart-items" id="cartItems"></div>
   <div class="cart-f">
     <button type="button" class="btn btn-gold btn-full magnetic" id="checkoutBtn" aria-label="Связаться по заказу">Отправить заявку</button>
-    <p class="form-note" style="text-align:center;margin-top:10px">Выберите мессенджер для связи с нами.</p>
   </div>
 </aside>
 
@@ -724,19 +749,19 @@ img{display:block;max-width:100%;height:auto}
   <h3 id="checkoutModalTitle">Куда отправить заказ?</h3>
   <p id="checkoutModalDesc">Выберите удобный мессенджер для связи</p>
   <div class="messenger-grid" id="messengerGrid">
-    <a class="messenger-btn whatsapp" id="sendWa" href="#" target="_blank" rel="noopener">
+    <a class="messenger-btn whatsapp" id="sendWa" href="#" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-.1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a7.4 7.4 0 01-2.2-1.4 8.2 8.2 0 01-1.5-1.9c-.2-.3 0-.4.1-.6l.4-.5.2-.4c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.5a1.1 1.1 0 00-.8.4 2.6 2.6 0 00-.8 2c0 1.2.9 2.4 1 2.5.2.3 2.1 3.2 5.1 4.4.7.3 1.3.5 1.7.6a4 4 0 001.9.1c.6-.1 1.8-.7 2-1.4s.2-1.3.1-1.4-.2-.2-.5-.3zM12.1 21.2h0a9.2 9.2 0 01-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.3a9.2 9.2 0 01-1.4-4.9 9.3 9.3 0 0115.8-6.5 9.2 9.2 0 012.7 6.5 9.3 9.3 0 01-9.3 9.2zm7.9-17a11.1 11.1 0 00-17.9 13.2L1 23l6.1-1.6a11.1 11.1 0 0016.8-9.4 11 11 0 00-3.3-7.9z"/></svg>
       <span>WhatsApp</span>
     </a>
-    <a class="messenger-btn telegram" id="sendTg" href="#" target="_blank" rel="noopener">
+    <a class="messenger-btn telegram" id="sendTg" href="#" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
       <span>Telegram</span>
     </a>
-    <a class="messenger-btn vk" id="sendVk" href="#" target="_blank" rel="noopener">
+    <a class="messenger-btn vk" id="sendVk" href="#" target="_blank">
       <svg viewBox="0 0 24 24"><path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.44c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.332-3.202C4.624 10.857 4 8.164 4 7.723c0-.237.102-.458.593-.458h1.744c.44 0 .61.203.78.678.863 2.49 2.3 4.675 2.895 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.372 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.403 2.151-3.572 2.151-3.572.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.35 4.031-2.35 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.471 2.05.17.49-.085.744-.576.744z"/></svg>
       <span>VKontakte</span>
     </a>
-    <a class="messenger-btn max" id="sendMax" href="https://vk.ru/away.php?to=https%3A%2F%2Fmax.ru%2Fu%2Ff9LHodD0cOJYdqeYM7y32ICLVInTawQUFtjl7R8LwDw4DtFJvK_uNFzDIUU&utf=1" target="_blank" rel="noopener">
+    <a class="messenger-btn max" id="sendMax" href="https://vk.ru/away.php?to=https%3A%2F%2Fmax.ru%2Fu%2Ff9LHodD0cOJYdqeYM7y32ICLVInTawQUFtjl7R8LwDw4DtFJvK_uNFzDIUU&utf=1" target="_blank">
       <svg viewBox="0 0 24 24">
         <defs>
           <linearGradient id="max-grad" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -782,7 +807,7 @@ img{display:block;max-width:100%;height:auto}
       </select>
     </div>
     <div class="field"><label for="rvText">Отзыв</label><textarea id="rvText" placeholder="Расскажите о вашем опыте" required style="min-height:80px"></textarea></div>
-    <button type="submit" class="btn btn-primary btn-full" aria-label="Отправить отзыв">Отправить отзыв</button>
+    <button type="submit" class="btn btn-primary btn-full" id="submitReviewBtn" aria-label="Отправить отзыв">Отправить отзыв</button>
   </form>
 </div>
 
@@ -810,38 +835,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var PRODUCTS = [];
   
-  // 30 ТОВАРОВ ДЛЯ 5 СТРАНИЦЕК
   var FALLBACK_PRODUCTS = [
     { id:'p1', name:'Связка гелиевых шаров', price:990, cat:'latex', badge:'Хит', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
     { id:'p2', name:'Шар 12" латекс (шт.)', price:45, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
     { id:'p3', name:'Фольгированное сердце', price:350, cat:'latex', badge:'New', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
     { id:'p4', name:'Фольгированная цифра', price:1200, cat:'latex', badge:'Хит', img:'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { id:'p5', name:'Фотозона «Нежность»', price:12000, cat:'event', badge:'Premium', img:'wings.jpg' },
-    { id:'p6', name:'Напольная композиция', price:3200, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70' },
-    { id:'p7', name:'Выписка / сет для малыша', price:4500, cat:'event', badge:'Топ', img:'vypusk.jpg' },
-    { id:'p8', name:'Оформление годика', price:7800, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
-    { id:'p9', name:'Коробка-сюрприз', price:4500, cat:'event', badge:'Топ', img:'https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { id:'p10', name:'Каркасная цифра с подсветкой', price:3500, cat:'event', badge:'Аренда', img:'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70' },
-    { id:'p11', name:'Свадебная арка', price:18000, cat:'event', badge:'Premium', img:'hero.jpg' },
-    { id:'p12', name:'Президиум молодожёнов', price:15000, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=70' },
     { id:'p13', name:'Композиция «Лебеди»', price:1500, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
     { id:'p14', name:'Шар 14" с надписью', price:65, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
     { id:'p15', name:'Фольгированная звезда', price:450, cat:'latex', badge:'New', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
     { id:'p16', name:'Воздушный шар с конфетти', price:280, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
     { id:'p17', name:'Гелиевая композиция "Цветы"', price:1800, cat:'latex', badge:'Хит', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
     { id:'p18', name:'Шар-сюрприз 18"', price:380, cat:'latex', badge:'', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { id:'p19', name:'Хром-шары (набор)', price:550, cat:'latex', badge:'Новинка', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
-    { id:'p20', name:'Аэромозаика', price:2500, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
-    { id:'p21', name:'Шар с фотографией', price:450, cat:'latex', badge:'', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { id:'p22', name:'Букет из шаров', price:1800, cat:'latex', badge:'Топ', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
-    { id:'p23', name:'Светящиеся шары', price:600, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
-    { id:'p24', name:'Оформление потолка', price:3500, cat:'latex', badge:'', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
-    { id:'p25', name:'Свадебный декор зала', price:25000, cat:'event', badge:'Premium', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70' },
-    { id:'p26', name:'Оформление выездной регистрации', price:18000, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
-    { id:'p27', name:'Фотозона «Цветочный рай»', price:9500, cat:'event', badge:'Новинка', img:'wings.jpg' },
-    { id:'p28', name:'Гирлянда из шаров', price:2800, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70' },
-    { id:'p29', name:'Композиция на выписку', price:5500, cat:'event', badge:'Хит', img:'vypusk.jpg' },
-    { id:'p30', name:'Оформление корпоратива', price:20000, cat:'event', badge:'', img:'hero.jpg' }
+    { id:'p31', name:'Набор шаров "Радуга"', price:2100, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p32', name:'Хром-шары золото', price:600, cat:'latex', badge:'New', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
+    { id:'p33', name:'Шар с днем рождения', price:120, cat:'latex', badge:'', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p34', name:'Фольгированная луна', price:550, cat:'latex', badge:'', img:'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p35', name:'Связка на выписку', price:2500, cat:'latex', badge:'Хит', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p36', name:'Шар-мишка фольга', price:400, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
+    { id:'p37', name:'Композиция на годик', price:3800, cat:'latex', badge:'Топ', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p38', name:'Гирлянда из шаров', price:1500, cat:'latex', badge:'', img:'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p39', name:'Шар с пожеланием', price:150, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p40', name:'Фольгированное сердце 18"', price:500, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
+    { id:'p41', name:'Набор "Малыш"', price:3200, cat:'latex', badge:'', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p42', name:'Шар-коробка', price:900, cat:'latex', badge:'', img:'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p43', name:'Букет из шаров "Ромашки"', price:2200, cat:'latex', badge:'Хит', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p44', name:'Светящиеся шары (набор)', price:1200, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
+    { id:'p45', name:'Фольгированная звезда 20"', price:700, cat:'latex', badge:'', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p46', name:'Шар с логотипом', price:250, cat:'latex', badge:'', img:'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p47', name:'Композиция "Свадебная"', price:4500, cat:'latex', badge:'Premium', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p48', name:'Шар-облако', price:800, cat:'latex', badge:'', img:'https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=70' },
+    { id:'p49', name:'Фольгированная цифра с конфетти', price:1400, cat:'latex', badge:'', img:'https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p50', name:'Набор шаров на выпускной', price:1800, cat:'latex', badge:'', img:'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600' },
+
+    { id:'p5', name:'Фотозона «Нежность»', price:0, cat:'event', badge:'Premium', img:'wings.jpg' },
+    { id:'p6', name:'Напольная композиция', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70' },
+    { id:'p7', name:'Выписка / сет для малыша', price:0, cat:'event', badge:'Топ', img:'vypusk.jpg' },
+    { id:'p8', name:'Оформление годика', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p9', name:'Коробка-сюрприз', price:4500, cat:'event', badge:'Топ', img:'https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p10', name:'Каркасная цифра с подсветкой', price:3500, cat:'event', badge:'Аренда', img:'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70' },
+    { id:'p11', name:'Свадебная арка', price:0, cat:'event', badge:'Premium', img:'hero.jpg' },
+    { id:'p12', name:'Президиум молодожёнов', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=70' },
+    { id:'p51', name:'Фотозона "Звездная"', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70' },
+    { id:'p52', name:'Оформление сцены', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p53', name:'Фотозона "Цветочная"', price:0, cat:'event', badge:'', img:'https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p54', name:'Арка из шаров', price:4500, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70' },
+    { id:'p55', name:'Оформление входа', price:0, cat:'event', badge:'', img:'hero.jpg' },
+    { id:'p56', name:'Фотозона "Морская"', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=70' },
+    { id:'p57', name:'Свадебный президиум', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70' },
+    { id:'p58', name:'Фотозона "Золотая"', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p59', name:'Оформление зала шарами', price:0, cat:'event', badge:'', img:'https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p60', name:'Фотозона "Геометрия"', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70' },
+    { id:'p61', name:'Каркасная цифра 1', price:3500, cat:'event', badge:'', img:'hero.jpg' },
+    { id:'p62', name:'Каркасная цифра 2', price:3500, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=70' },
+    { id:'p63', name:'Каркасная цифра 3', price:3500, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70' },
+    { id:'p64', name:'Каркасная цифра 4', price:3500, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p65', name:'Каркасная цифра 5', price:3500, cat:'event', badge:'', img:'https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p66', name:'Оформление выпускного', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70' },
+    { id:'p67', name:'Фотозона "Облака"', price:0, cat:'event', badge:'', img:'hero.jpg' },
+    { id:'p68', name:'Свадебный декор', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=70' },
+    { id:'p69', name:'Фотозона на юбилей', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=70' },
+    { id:'p70', name:'Композиция "Сердце"', price:2500, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=70' },
+    { id:'p71', name:'Оформление корпоратива', price:0, cat:'event', badge:'', img:'https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&cs=tinysrgb&w=600' },
+    { id:'p72', name:'Фотозона "Ночь"', price:0, cat:'event', badge:'', img:'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=70' }
   ];
 
   var KEY_CART = 'kolibri_cart_v3';
@@ -851,6 +906,7 @@ document.addEventListener('DOMContentLoaded', function () {
   try { cart = JSON.parse(localStorage.getItem(KEY_CART)) || []; if (!Array.isArray(cart)) cart = []; } catch (e) { cart = []; }
 
   function saveCart() { localStorage.setItem(KEY_CART, JSON.stringify(cart)); }
+  function money(n) { return Number(n).toLocaleString('ru-RU') + ' ₽'; }
 
   function scrollTo(el) {
     if (!el) return;
@@ -916,12 +972,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function tip(t) { toast.textContent = t; toast.classList.add('show'); clearTimeout(tip._t); tip._t = setTimeout(function () { toast.classList.remove('show'); }, 2000); }
 
-  function addToCart(name, id) {
+  window.addToCart = function(name, id) {
     var ex = cart.find(function (i) { return i.id === id; });
     if (ex) ex.qty += 1;
     else cart.push({ id: id || ('x' + Date.now()), name: name, qty: 1 });
     saveCart(); renderCart(); 
-    openCheckoutModal();
+    tip('Товар добавлен в заявку');
   }
 
   window.changeQty = function (i, d) {
@@ -959,13 +1015,21 @@ document.addEventListener('DOMContentLoaded', function () {
     var paginatedList = list.slice(start, start + itemsPerPage);
 
     productsEl.innerHTML = paginatedList.map(function (p) {
-      return '<article class="pcard tilt-card" data-name="' + p.name.replace(/"/g, '&quot;') + '">' +
+      var priceHtml = (p.price && parseInt(p.price) > 0) 
+          ? '<div class="price">' + money(p.price) + '</div>' 
+          : '<div class="price-text">Узнать стоимость</div>';
+
+      return '<article class="pcard tilt-card">' +
         '<div class="pmedia">' + (p.badge ? '<span class="pbadge">' + p.badge + '</span>' : '') +
         '<img src="' + p.img + '" alt="' + p.name.replace(/"/g, '&quot;') + '" loading="lazy" decoding="async" onerror="this.style.opacity=0"></div>' +
-        '<div class="pinfo"><h3>' + p.name + '</h3>' +
-        '<div class="pbot">' +
-        '<button type="button" class="btn-order" data-add="' + p.id + '">Узнать стоимость</button>' +
-        '</div></div></article>';
+        '<div class="pinfo">' +
+          '<h3>' + p.name + '</h3>' +
+          priceHtml +
+          '<div class="pbot">' +
+            '<button type="button" class="btn-more" data-action="more" data-id="' + p.id + '" data-name="' + p.name.replace(/"/g, '&quot;') + '">Подробнее</button>' +
+            '<button type="button" class="btn-order" data-action="cart" data-id="' + p.id + '" data-name="' + p.name.replace(/"/g, '&quot;') + '">В корзину</button>' +
+          '</div>' +
+        '</div></article>';
     }).join('') || '<p style="grid-column:1/-1;color:var(--muted);padding:24px;text-align:center;">В этой категории пока пусто — оставьте заявку, подберём вручную.</p>';
 
     renderPagination(totalPages);
@@ -983,19 +1047,39 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.addEventListener('click', function() {
         currentPage = parseInt(this.getAttribute('data-page'));
         renderProducts();
-        var catalogTop = document.getElementById('catalog').offsetTop - 72;
-        window.scrollTo({ top: catalogTop, behavior: 'smooth' });
+        scrollTo(document.getElementById('catalog'));
       });
     });
   }
 
   productsEl.addEventListener('click', function (e) {
-    var btn = e.target.closest('[data-add]');
+    var btn = e.target.closest('button');
     if (!btn) return;
-    var p = PRODUCTS.find(function (x) { return x.id === btn.getAttribute('data-add'); });
-    if (!p) return;
-    addToCart(p.name, p.id);
+    
+    var action = btn.getAttribute('data-action');
+    var id = btn.getAttribute('data-id');
+    var name = btn.getAttribute('data-name');
+
+    if (action === 'more') {
+        showProductDetails(name);
+    } else if (action === 'cart') {
+        addToCart(name, id);
+    }
   });
+
+  window.showProductDetails = function(name) {
+    document.getElementById('checkoutModalTitle').textContent = 'Обсудить детали';
+    document.getElementById('checkoutModalDesc').textContent = 'Выберите мессенджер, чтобы задать вопрос или узнать стоимость';
+    
+    var text = 'Здравствуйте! Хочу узнать подробности о товаре: ' + name;
+    
+    document.getElementById('sendWa').href = 'https://wa.me/79676179721?text=' + encodeURIComponent(text);
+    document.getElementById('sendTg').href = 'https://t.me/+79676179721?text=' + encodeURIComponent(text);
+    document.getElementById('sendVk').href = 'https://vk.ru/id789856377';
+    document.getElementById('sendMax').href = 'https://vk.ru/away.php?to=https%3A%2F%2Fmax.ru%2Fu%2Ff9LHodD0cOJYdqeYM7y32ICLVInTawQUFtjl7R8LwDw4DtFJvK_uNFzDIUU&utf=1';
+    
+    openCheckoutModal();
+  };
 
   document.querySelectorAll('#filters .fchip').forEach(function (chip) {
     chip.addEventListener('click', function () {
@@ -1071,7 +1155,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var name = document.getElementById('rvName').value.trim();
     var rating = document.getElementById('rvRating').value;
     var text = document.getElementById('rvText').value.trim();
+    var btn = document.getElementById('submitReviewBtn');
+    
     if (!name || !rating || !text) { tip('Заполните все поля'); return; }
+    
+    btn.textContent = 'Отправка...';
+    btn.disabled = true;
     
     fetch('api.php?type=reviews', {
       method: 'POST',
@@ -1085,9 +1174,15 @@ document.addEventListener('DOMContentLoaded', function () {
         tip('Отзыв отправлен на модерацию');
         document.getElementById('reviewForm').reset();
         fetchReviews();
+      } else {
+        tip('Ошибка при отправке');
       }
     })
-    .catch(function() { tip('Ошибка отправки'); });
+    .catch(function() { tip('Ошибка соединения. Проверьте интернет.'); })
+    .finally(function() {
+        btn.textContent = 'Отправить отзыв';
+        btn.disabled = false;
+    });
   });
 
   function fetchReviews() {
@@ -1178,7 +1273,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
     }
 
-    // Восстановлен 3D Tilt эффект
     if (hasGsap && !isMobile) {
       document.querySelectorAll('.tilt-card').forEach(function (card) {
         card.addEventListener('mousemove', function (e) {
@@ -1197,7 +1291,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Восстановлен эффект Магнитных кнопок
     if (hasGsap && fine && !isMobile) {
       document.querySelectorAll('.magnetic').forEach(function (btn) {
         btn.addEventListener('mousemove', function (e) {
@@ -1240,5 +1333,23 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
+<!-- ЯНДЕКС.МЕТРИКА -->
+<!-- ВАЖНО: Замените XXXXXXXXX на ваш реальный номер счетчика из Яндекс.Метрики -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(XXXXXXXXX, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /ЯНДЕКС.МЕТРИКА -->
+
 </body>
 </html>

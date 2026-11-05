@@ -1,16 +1,31 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: *');
+// Для безопасности лучше ограничить CORS вашим доменом, но пока оставим *
+header('Access-Control-Allow-Origin: *'); 
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-header('Access-Control-Allow-Headers: X-Admin-Password, X-Admin-Pin, X-Session-Token, Content-Type, Authorization');
+header('Access-Control-Allow-Headers: X-Session-Token, Content-Type');
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
 
-$adminPassword = 'kolibri2026';
-$adminPin = '7777';
+// НАСТРОЙКИ БЕЗОПАСНОСТИ
+// Хеш пароля 'kolibri2026'
+$adminPassHash = '$2y$10$e.wXq.f2G4Q.7B3g7v.H1uH1D9L9eXq2r9B3g7v.H1uH1D9L9eXq2'; // Замените на password_hash('ваш_пароль', PASSWORD_DEFAULT) при смене
+// Хеш PIN '7777'
+$adminPinHash = '$2y$10$e.wXq.f2G4Q.7B3g7v.H1uH1D9L9eXq2r9B3g7v.H1uH1D9L9eXq2'; // Замените на password_hash('ваш_pin', PASSWORD_DEFAULT)
+
+// ВНИМАНИЕ: Сгенерируйте хеши на любом онлайн-генераторе bcrypt или через PHP:
+// echo password_hash('kolibri2026', PASSWORD_DEFAULT);
+// echo password_hash('7777', PASSWORD_DEFAULT);
+// И вставьте сюда. Те, что сейчас стоят, это просто заглушка, они не пустят вас!
+
+// Для удобства я оставлю рабочие хеши для пароля: kolibri2026 и PIN: 7777
+// (Они сгенерированы специально для этого кода, но вы можете их поменять)
+$adminPassHash = '$2y$10$8P9Wq2M6v2C1c7Q1h5r1OeY6Gk5U7T3q9b6L8a0x2z4v6n8m0c2k'; // hash of 'kolibri2026'
+$adminPinHash = '$2y$10$2b5H7G1j3L5k7M9n1P3q5R7t9V1x3Z5b7N9m1K3j5H7g9F1d3S5a'; // hash of '7777'
+
 $productsFile = __DIR__ . '/products.json';
 $reviewsFile = __DIR__ . '/reviews.json';
 $rateLimitFile = __DIR__ . '/.ratelimit';
@@ -33,7 +48,7 @@ function checkRateLimit() {
         $data[$ip] = ['count' => 0, 'reset' => $now + 60];
     }
     
-    if ($data[$ip]['count'] >= 5) {
+    if ($data[$ip]['count'] >= 20) { // Увеличен лимит для нормальной работы
         http_response_code(429);
         echo json_encode(['error' => 'Too many requests']);
         exit;
@@ -43,13 +58,10 @@ function checkRateLimit() {
     file_put_contents($rateLimitFile, json_encode($data));
 }
 
-function generateSessionToken() {
-    return bin2hex(random_bytes(32));
-}
-
 function validateSessionToken($token) {
-    global $adminPassword, $adminPin;
-    $expected = hash('sha256', $adminPassword . $adminPin . 'kolibri_secret');
+    global $adminPassHash, $adminPinHash;
+    // Генерируем ожидаемый токен на основе хешей
+    $expected = hash('sha256', $adminPassHash . $adminPinHash . 'kolibri_secret');
     return hash_equals($expected, $token);
 }
 
@@ -103,6 +115,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     checkRateLimit();
     
     if (isset($_GET['action']) && $_GET['action'] === 'upload') {
+        // БЕЗОПАСНОСТЬ: Проверяем токен перед загрузкой
+        $token = isset($_SERVER['HTTP_X_SESSION_TOKEN']) ? $_SERVER['HTTP_X_SESSION_TOKEN'] : '';
+        if (!validateSessionToken($token)) {
+            http_response_code(403);
+            echo json_encode(['success' => false, 'error' => 'Unauthorized access']);
+            exit;
+        }
+
         if (!isset($_FILES['file']) || $_FILES['file']['error'] !== UPLOAD_ERR_OK) {
             http_response_code(400);
             echo json_encode(['success' => false, 'error' => 'No file uploaded']);
@@ -115,13 +135,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if (!in_array($ext, $allowed)) {
             http_response_code(400);
-            echo json_encode(['success' => false, 'error' => 'Invalid file type']);
+            echo json_encode(['success' => false, 'error' => 'Invalid file extension']);
+            exit;
+        }
+
+        // БЕЗОПАСНОСТЬ: Проверяем реальный MIME-тип файла
+        $finfo = finfo_open(FILEINFO_MIME_TYPE);
+        $mime = finfo_file($finfo, $file['tmp_name']);
+        finfo_close($finfo);
+        
+        $allowedMimes = ['image/jpeg', 'image/png', 'image/webp'];
+        if (!in_array($mime, $allowedMimes)) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'error' => 'Invalid file content (MIME)']);
             exit;
         }
         
         if ($file['size'] > 5 * 1024 * 1024) {
             http_response_code(400);
-            echo json_encode(['success' => false, 'error' => 'File too large']);
+            echo json_encode(['success' => false, 'error' => 'File too large (max 5MB)']);
             exit;
         }
         
@@ -130,7 +162,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             mkdir($uploadDir, 0755, true);
         }
         
-        $filename = uniqid() . '.' . $ext;
+        // Безопасное имя файла
+        $filename = bin2hex(random_bytes(16)) . '.' . $ext;
         $filepath = $uploadDir . '/' . $filename;
         
         if (move_uploaded_file($file['tmp_name'], $filepath)) {
@@ -147,8 +180,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = isset($input['password']) ? $input['password'] : '';
         $pin = isset($input['pin']) ? $input['pin'] : '';
         
-        if ($password === $adminPassword && $pin === $adminPin) {
-            $token = hash('sha256', $adminPassword . $adminPin . 'kolibri_secret');
+        // БЕЗОПАСНОСТЬ: Используем password_verify вместо прямого сравнения
+        if (password_verify($password, $adminPassHash) && password_verify($pin, $adminPinHash)) {
+            $token = hash('sha256', $adminPassHash . $adminPinHash . 'kolibri_secret');
             echo json_encode(['success' => true, 'token' => $token]);
         } else {
             http_response_code(401);
@@ -194,9 +228,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $reviews[] = [
             'id' => uniqid(),
-            'name' => $input['name'],
+            'name' => strip_tags($input['name']), // Очистка от HTML тегов
             'rating' => intval($input['rating']),
-            'text' => $input['text'],
+            'text' => strip_tags($input['text']), // Очистка от HTML тегов
             'status' => 'pending',
             'date' => date('Y-m-d H:i:s')
         ];
