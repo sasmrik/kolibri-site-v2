@@ -91,9 +91,9 @@ img{display:block;max-width:100%;height:auto}
 /* Loader */
 .loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:grid;place-items:center;transition:opacity .4s var(--ease),visibility .4s}
 .loader.hide{opacity:0;visibility:hidden;pointer-events:none}
-.loader-mark{font-family:var(--font-b) !important;font-weight:800 !important;font-size:48px !important;letter-spacing:-0.04em !important;color:var(--marsala) !important}
+.loader-mark{font-family:var(--font-b) !important;font-weight:800 !important;font-size:48px !important;letter-spacing:-0.04em !important;color:var(--marsala) !important; display: flex; align-items: center; justify-content: center; gap: -45px;}
 .loader-mark em{font-style:italic;color:var(--plum)}
-.loader-bar{width:120px;height:2px;background:rgba(138,40,70,.12);margin-top:18px;border-radius:2px;overflow:hidden}
+.loader-bar{width:120px;height:2px;background:rgba(138,40,70,.12);margin-top:18px;border-radius:2px;overflow:hidden; margin-inline: auto;}
 .loader-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--marsala),var(--gold));animation:load 0.8s var(--ease) forwards}
 @keyframes load{to{width:100%}}
 
@@ -120,8 +120,44 @@ img{display:block;max-width:100%;height:auto}
 .header.on{background:rgba(15, 10, 20, 0.85) !important;backdrop-filter:blur(12px) saturate(1.15);-webkit-backdrop-filter:blur(12px) saturate(1.15);box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;}
 .header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{font-family:var(--font-b);font-size:clamp(18px,2.5vw,26px);font-weight:800;letter-spacing:-.01em;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;display:flex;flex-direction:column;line-height:1.15}
-.logo-main{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;text-shadow:none !important}
-.logo-sub{font-size:10px;font-weight:500;color:#D0D0D0 !important;-webkit-text-fill-color:#D0D0D0 !important;letter-spacing:.02em;white-space:normal;overflow:hidden;text-overflow:ellipsis;opacity:.9;text-shadow:none !important;line-height: 1.3; margin-top: 2px;}
+
+.logo-main {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 800;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: none !important;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0px; /* Убрали gap, чтобы текст прилип к птичке */
+}
+
+.logo-sub{font-size:10px;font-weight:500;color:#D0D0D0 !important;-webkit-text-fill-color:#D0D0D0 !important;letter-spacing:.02em;white-space:normal;overflow:hidden;text-overflow:ellipsis;opacity:.9;text-shadow:none !important;line-height: 1.3;}
+
+/* УВЕЛИЧЕНА ПТИЧКА И УБРАН MIX-BLEND-MODE */
+.logo-bird {
+  width: 3em;
+  height: 3em;
+  object-fit: contain;
+  vertical-align: middle;
+  animation: floatBird 3s ease-in-out infinite;
+  will-change: transform;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  background-color: transparent;
+  margin-right: 5px; /* Маленький отступчик от птички до текста */
+  margin-top: -0.5em;
+  margin-bottom: -0.5em;
+  margin-right: -20px; /* ДОБАВИТЬ ВОТ ЭТУ СТРОКУ */
+}
+
+@keyframes floatBird {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(-3deg); }
+}
+
 .nav-desk{display:none;gap:28px}
 @media(min-width:920px){.nav-desk{display:flex}}
 .nav-desk a{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;text-shadow:none !important;transition:color .25s}
@@ -138,7 +174,6 @@ img{display:block;max-width:100%;height:auto}
 .burger.on span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
 @media(min-width:920px){.burger{display:none}}
 
-/* ИСПРАВЛЕНО: Надежное скрытие бокового меню */
 .overlay{position:fixed;inset:0;z-index:850;background:rgba(26,26,26,.4);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .35s}
 .overlay.open{opacity:1;pointer-events:auto}
 .drawer-left{position:fixed;top:0;left:0;bottom:0;width:min(100%,360px);background:var(--bg);z-index:860;padding:calc(var(--hh) + 20px) 28px 32px;transform:translateX(-105%);transition:transform .4s var(--ease);box-shadow:var(--shadow2); overflow-y: auto; visibility: hidden;}
@@ -393,6 +428,8 @@ img{display:block;max-width:100%;height:auto}
   .hero-row { flex-direction: column !important; align-items: center !important; }
   .actions { flex-shrink: 0 !important; gap: 5px !important; }
   
+  .logo-bird { width: 2.2em; height: 2.2em; margin-right: 2px; }
+  
   .stats-grid { grid-template-columns: 1fr 1fr !important; }
   .stat-item strong { font-size: 1.05rem !important; line-height: 1.15 !important; }
   .stat-item span { font-size: 10px !important; }
@@ -421,7 +458,11 @@ img{display:block;max-width:100%;height:auto}
 <body>
 <div class="loader" id="loader" aria-hidden="true">
   <div>
-    <div class="loader-mark">🕊️ Колибри</div>
+    <!-- ИСПОЛЬЗУЕМ ВАШУ КАРТИНКУ bird.png -->
+    <div class="loader-mark">
+      <img src="bird.png" class="logo-bird" alt="Колибри">
+      Колибри
+    </div>
     <div class="loader-bar"><i></i></div>
   </div>
 </div>
@@ -433,7 +474,11 @@ img{display:block;max-width:100%;height:auto}
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#hero" class="logo">
-      <span class="logo-main">🕊️ КОЛИБРИ</span>
+      <!-- ИСПОЛЬЗУЕМ ВАШУ КАРТИНКУ bird.png -->
+      <span class="logo-main">
+        <img src="bird.png" class="logo-bird" alt="Колибри">
+        КОЛИБРИ
+      </span>
       <span class="logo-sub">Студия декора и праздника «Колибри» Ачинск</span>
     </a>
     <nav class="nav-desk" aria-label="Меню">
@@ -1348,7 +1393,7 @@ document.addEventListener('DOMContentLoaded', function () {
         webvisor:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXXX" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXXX" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
 <!-- /ЯНДЕКС.МЕТРИКА -->
 
 </body>
