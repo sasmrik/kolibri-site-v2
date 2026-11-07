@@ -91,7 +91,7 @@ img{display:block;max-width:100%;height:auto}
 /* Loader */
 .loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:grid;place-items:center;transition:opacity .4s var(--ease),visibility .4s}
 .loader.hide{opacity:0;visibility:hidden;pointer-events:none}
-.loader-mark{font-family:var(--font-b) !important;font-weight:800 !important;font-size:48px !important;letter-spacing:-0.04em !important;color:var(--marsala) !important; display: flex; align-items: center; justify-content: center; gap: -45px;}
+.loader-mark{font-family:var(--font-b) !important;font-weight:800 !important;font-size:48px !important;letter-spacing:-0.04em !important;color:var(--marsala) !important; display: flex; align-items: center; justify-content: center; gap: 0px;}
 .loader-mark em{font-style:italic;color:var(--plum)}
 .loader-bar{width:120px;height:2px;background:rgba(138,40,70,.12);margin-top:18px;border-radius:2px;overflow:hidden; margin-inline: auto;}
 .loader-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--marsala),var(--gold));animation:load 0.8s var(--ease) forwards}
@@ -119,43 +119,68 @@ img{display:block;max-width:100%;height:auto}
 .header{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--hh);background:rgba(15, 10, 20, 0.6) !important;backdrop-filter:blur(10px) !important;-webkit-backdrop-filter:blur(10px) !important;border-bottom:1px solid rgba(255,255,255,0.1) !important;transition:background .35s,backdrop-filter .35s,border-color .35s,box-shadow .35s;transform:translateZ(0);-webkit-transform:translateZ(0);}
 .header.on{background:rgba(15, 10, 20, 0.85) !important;backdrop-filter:blur(12px) saturate(1.15);-webkit-backdrop-filter:blur(12px) saturate(1.15);box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;}
 .header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{font-family:var(--font-b);font-size:clamp(18px,2.5vw,26px);font-weight:800;letter-spacing:-.01em;z-index:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;display:flex;flex-direction:column;line-height:1.15}
 
+/* ЛОГОТИП */
+.logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 2;
+  text-decoration: none;
+  overflow: visible; /* Важно, чтобы птичка не обрезалась */
+}
 .logo-main {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-b);
+  font-size: 28px;
   font-weight: 800;
   color: #FFFFFF !important;
   -webkit-text-fill-color: #FFFFFF !important;
-  text-shadow: none !important;
-  margin-bottom: 2px;
-  display: flex;
-  align-items: center;
-  gap: 0px; /* Убрали gap, чтобы текст прилип к птичке */
+  gap: 0px;
+  line-height: 1;
+  overflow: visible; /* Важно! */
+}
+.logo-sub{
+  font-size: 10px;
+  font-weight: 500;
+  color: #D0D0D0 !important;
+  -webkit-text-fill-color: #D0D0D0 !important;
+  letter-spacing: .02em;
+  opacity: .9;
+  margin-top: 4px;
+  text-align: left;
 }
 
-.logo-sub{font-size:10px;font-weight:500;color:#D0D0D0 !important;-webkit-text-fill-color:#D0D0D0 !important;letter-spacing:.02em;white-space:normal;overflow:hidden;text-overflow:ellipsis;opacity:.9;text-shadow:none !important;line-height: 1.3;}
-
-/* УВЕЛИЧЕНА ПТИЧКА И УБРАН MIX-BLEND-MODE */
+/* ЧИСТЫЙ ЗУМ ДЛЯ ПТИЧКИ (БЕЗ CLIP-PATH) */
 .logo-bird {
-  width: 3em;
-  height: 3em;
+  width: 45px;
+  height: 45px;
   object-fit: contain;
-  vertical-align: middle;
+  /* Увеличиваем птичку в 3.5 раза, чтобы убить прозрачные поля */
+  transform: scale(3.5); 
+  /* Отрицательные отступы, чтобы текст прилип к птичке */
+  margin: 0 -5px;
   animation: floatBird 3s ease-in-out infinite;
-  will-change: transform;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-  background-color: transparent;
-  margin-right: 5px; /* Маленький отступчик от птички до текста */
-  margin-top: -0.5em;
-  margin-bottom: -0.5em;
-  margin-right: -20px; /* ДОБАВИТЬ ВОТ ЭТУ СТРОКУ */
 }
 
 @keyframes floatBird {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-4px) rotate(-3deg); }
+  0%, 100% { transform: scale(3.5) translateY(0) rotate(0deg); }
+  50% { transform: scale(3.5) translateY(-4px) rotate(-3deg); }
+}
+
+/* Экран загрузки */
+@keyframes loaderBird {
+  0%, 100% { transform: scale(4.5) translateY(0); }
+  50% { transform: scale(4.5) translateY(-8px); }
+}
+.loader-mark .logo-bird {
+  width: 60px !important;
+  height: 60px !important;
+  transform: scale(4.5) !important;
+  margin: 0 -5px !important;
+  animation: loaderBird 1.5s ease-in-out infinite !important;
 }
 
 .nav-desk{display:none;gap:28px}
@@ -423,12 +448,29 @@ img{display:block;max-width:100%;height:auto}
 /* Mobile Fixes */
 @media(max-width:768px){
   .header-inner { flex-wrap: nowrap !important; justify-content: space-between !important; align-items: center !important; padding: 10px 15px !important; }
-  .logo { font-size: 15px !important; line-height: 1.1 !important; max-width: 60% !important; text-align: left !important; }
-  .logo-sub { display: block !important; font-size: 9.5px !important; white-space: normal !important; line-height: 1.3 !important; margin-top: 2px; }
+  
+  /* Увеличиваем текст */
+  .logo-main { font-size: 24px !important; gap: 10px !important; }
+  
+  /* Делаем птичку еще более гигантской на телефоне */
+  .logo-bird { 
+    width: 45px !important; 
+    height: 45px !important; 
+    transform: scale(3.8) !important; /* Еще больше зума */
+    margin: 0 -18px !important; 
+    animation: floatBirdMobile 2.5s ease-in-out infinite !important;
+  }
+  
+  @keyframes floatBirdMobile {
+    0%, 100% { transform: scale(3.8) translateY(0) rotate(0deg); }
+    50% { transform: scale(3.8) translateY(-3px) rotate(-4deg); }
+  }
+
+  /* СКРЫВАЕМ ПОДЗАГОЛОВОК */
+  .logo-sub { display: none !important; }
+  
   .hero-row { flex-direction: column !important; align-items: center !important; }
   .actions { flex-shrink: 0 !important; gap: 5px !important; }
-  
-  .logo-bird { width: 2.2em; height: 2.2em; margin-right: 2px; }
   
   .stats-grid { grid-template-columns: 1fr 1fr !important; }
   .stat-item strong { font-size: 1.05rem !important; line-height: 1.15 !important; }
@@ -458,7 +500,6 @@ img{display:block;max-width:100%;height:auto}
 <body>
 <div class="loader" id="loader" aria-hidden="true">
   <div>
-    <!-- ИСПОЛЬЗУЕМ ВАШУ КАРТИНКУ bird.png -->
     <div class="loader-mark">
       <img src="bird.png" class="logo-bird" alt="Колибри">
       Колибри
@@ -474,7 +515,6 @@ img{display:block;max-width:100%;height:auto}
 <header class="header" id="header">
   <div class="container header-inner">
     <a href="#hero" class="logo">
-      <!-- ИСПОЛЬЗУЕМ ВАШУ КАРТИНКУ bird.png -->
       <span class="logo-main">
         <img src="bird.png" class="logo-bird" alt="Колибри">
         КОЛИБРИ
