@@ -54,14 +54,15 @@ img{display:block;max-width:100%;height:auto}
 
 .products-list{display:flex;flex-direction:column;gap:16px}
 .product-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 24px rgba(96,39,73,.04);display:grid;gap:16px;grid-template-columns:1fr}
-@media(min-width:700px){.product-card{grid-template-columns:68px 1fr auto;align-items:center}}
-.p-thumb{width:68px;height:68px;border-radius:14px;overflow:hidden;background:var(--powder2)}
+@media(min-width:700px){.product-card{grid-template-columns:68px 1fr auto;align-items:start}}
+.p-thumb{width:68px;height:68px;border-radius:14px;overflow:hidden;background:var(--powder2); flex-shrink: 0;}
 .p-thumb img{width:100%;height:100%;object-fit:cover}
 .p-fields{display:grid;gap:12px}
 .p-fields .field{display:grid;gap:6px}
 .p-fields label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.p-fields input,.p-fields select{width:100%;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.9);outline:none}
-.p-fields input:focus,.p-fields select:focus{border-color:rgba(138,40,70,.4);box-shadow:0 0 0 3px rgba(138,40,70,.1)}
+.p-fields input,.p-fields select, .p-fields textarea{width:100%;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.9);outline:none;font-family: inherit;}
+.p-fields input:focus,.p-fields select:focus, .p-fields textarea:focus{border-color:rgba(138,40,70,.4);box-shadow:0 0 0 3px rgba(138,40,70,.1)}
+.p-fields textarea { resize: vertical; min-height: 80px; }
 .p-actions{display:flex;gap:8px;flex-wrap:wrap}
 .p-actions .btn{font-size:13px;padding:10px 16px}
 
@@ -191,6 +192,7 @@ function renderProducts() {
         '<div class="field"><label>URL изображения</label><input type="text" class="p-img" value="' + (p.img || '') + '"></div>' +
         '<div class="field"><label>Загрузить фото</label><input type="file" class="p-upload" accept="image/*" data-index="' + i + '"></div>' +
         '<div class="field"><label>Бейдж (пусто = без бейджа)</label><input type="text" class="p-badge" value="' + (p.badge || '') + '"></div>' +
+        '<div class="field"><label>Описание товара</label><textarea class="p-desc" rows="4">' + (p.description || '') + '</textarea></div>' +
       '</div>' +
       '<div class="p-actions">' +
         '<button class="btn btn-danger btn-sm delete-btn">Удалить</button>' +
@@ -226,7 +228,6 @@ function renderProducts() {
       
       setStatus('Загрузка...', false);
       
-      // ИСПРАВЛЕНО: Добавлен X-Session-Token для безопасности
       fetch(API_URL + '?action=upload', {
         method: 'POST',
         headers: { 'X-Session-Token': sessionToken },
@@ -257,7 +258,8 @@ function addProduct() {
     price: 0,
     cat: 'latex',
     badge: '',
-    img: ''
+    img: '',
+    description: ''
   });
   renderProducts();
 }
@@ -275,7 +277,8 @@ function saveProducts() {
         price: parseInt(card.querySelector('.p-price').value) || 0,
         cat: card.querySelector('.p-cat').value,
         badge: card.querySelector('.p-badge').value,
-        img: card.querySelector('.p-img').value
+        img: card.querySelector('.p-img').value,
+        description: card.querySelector('.p-desc').value
       });
     }
   });
